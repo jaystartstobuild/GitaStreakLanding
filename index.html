@@ -314,6 +314,11 @@
       animation: wisdomShimmer 5s ease infinite;
     }
 
+    @keyframes heroScrollDot {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(8px); opacity: .4; }
+    }
+
     @keyframes flamePulse {
 
       0%,
@@ -391,6 +396,7 @@
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
       border-bottom: none !important;
+      box-shadow: none !important;
       transition: opacity .3s ease, transform .3s ease;
     }
 
@@ -408,7 +414,7 @@
     }
 
     #mainNav ul {
-      color: rgba(255, 255, 255, .9);
+      color: #1a1a2e;
       transition: gap .5s cubic-bezier(.16, 1, .3, 1);
     }
 
@@ -1183,110 +1189,130 @@
   <!-- NAV                                    -->
   <!-- ══════════════════════════════════════ -->
   <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50">
-    <div class="px-12 md:px-20 flex items-center" style="padding-top:22px;padding-bottom:22px;position:relative;">
-      <a href="#" class="flex items-center gap-2.5">
-        <img src="icon.png" alt="Gita Streak" style="width:36px;height:36px;object-fit:cover;border-radius:8px;">
-        <span class="font-black text-lg text-white tracking-tight">Gita Streak</span>
+    <div class="pr-8 md:pr-14 flex items-center justify-between" style="padding-top:10px;padding-bottom:10px;padding-left:24px;">
+      <!-- Left: logo + name -->
+      <a href="#" class="flex items-center gap-2">
+        <img src="icon3.jpeg" alt="Gita Streak" style="width:44px;height:44px;object-fit:cover;object-position:center;border-radius:11px;">
+        <span class="font-black tracking-tight" style="color:#1a1a2e;font-size:1.1rem;">Gita Streak</span>
       </a>
-      <ul class="hidden md:flex items-center gap-8 text-sm font-semibold"
-        style="position:absolute;left:50%;transform:translateX(-50%);">
-        <li><a href="#wellness" class="hover:text-saffron transition-colors">Wellness</a></li>
-        <li><a href="#app-features-target" class="hover:text-saffron transition-colors">App Features</a></li>
-        <li><a href="#journey-heading" class="hover:text-saffron transition-colors">Journey</a></li>
-        <li><a href="#faq" class="hover:text-saffron transition-colors">FAQ</a></li>
-      </ul>
+      <!-- Right: nav links + download -->
+      <div class="hidden md:flex items-center gap-7">
+        <ul class="flex items-center gap-7 text-sm font-semibold" style="color:#1a1a2e;">
+          <li><a href="#wellness" class="hover:text-saffron transition-colors">Wellness</a></li>
+          <li><a href="#app-features-target" class="hover:text-saffron transition-colors">App Features</a></li>
+          <li><a href="#journey-heading" class="hover:text-saffron transition-colors">Journey</a></li>
+          <li><a href="#faq" class="hover:text-saffron transition-colors">FAQ</a></li>
+        </ul>
+        <a href="#download-cta"
+          class="text-white text-xs font-black px-5 py-2.5 rounded-xl transition-all hover:-translate-y-0.5 hover:brightness-110"
+          style="background:linear-gradient(135deg,#ff9500 0%,#ff6a00 100%);box-shadow:0 0 18px rgba(255,149,0,0.55),0 2px 8px rgba(255,106,0,0.35);">
+          Download
+        </a>
+      </div>
     </div>
   </nav>
 
 
   <!-- ══════════════════════════════════════ -->
-  <!-- HERO SCROLL STAGE            gs=0      -->
-  <!-- 250 vh — all 240 frames play as you scroll -->
+  <!-- HERO                          gs=0      -->
   <!-- ══════════════════════════════════════ -->
-  <div id="heroScrollStage" style="height:250vh;position:relative;background:#0a0a12;">
-    <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:#0a0a12;">
+  <section id="hero" style="position:relative;height:100vh;min-height:700px;overflow:hidden;background:linear-gradient(135deg,#fff8f0 0%,#ffffff 55%,#fff3e6 100%);">
 
-      <!-- Frame canvas (z=0) -->
-      <canvas id="heroCanvas"
-        style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;background:#0a0a12;"></canvas>
+    <!-- Grain texture overlay — warm beige -->
+    <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;filter:sepia(1) brightness(1.12) hue-rotate(5deg);" xmlns="http://www.w3.org/2000/svg">
+      <filter id="heroGrain" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#heroGrain)" opacity="0.30"/>
+    </svg>
 
-      <!-- Light frosted overlay for legibility (z=1) -->
-      <div style="position:absolute;inset:0;z-index:1;pointer-events:none;
-         background:linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,.08) 42%,rgba(0,0,0,.32) 100%);"></div>
-      <div style="position:absolute;inset:0;z-index:2;pointer-events:none;
-         background:rgba(255,255,255,0.04);"></div>
+    <!-- Cursor-reactive radial glow layer -->
+    <div id="heroCursorGlow" style="position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(520px circle at 65% 50%,rgba(255,149,0,.28) 0%,rgba(255,180,80,.14) 40%,transparent 65%);transition:background .06s ease;"></div>
 
-      <!-- Hero content (z=10) -->
-      <section id="hero"
-        class="absolute inset-0 z-10 flex flex-col items-start justify-center text-left px-12 md:px-20 overflow-hidden"
-        style="padding-top:80px;">
+    <!-- Warm edge vignette -->
+    <div style="position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 70% 80% at 78% 50%,transparent 30%,rgba(255,220,180,.50) 100%);"></div>
 
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-7 max-w-2xl">
+    <!-- Content: text left, devices right -->
+    <div style="position:absolute;inset:0;z-index:10;display:flex;align-items:center;padding-top:80px;padding-left:80px;padding-right:0;gap:0;">
+
+      <!-- LEFT: text column -->
+      <div style="flex:0 0 auto;width:580px;padding-right:24px;">
+        <h1 class="text-5xl md:text-6xl font-black leading-[1.05] tracking-tight mb-7" style="color:#1a1a2e;">
           Elevate Your Day with<br>
           <span class="wisdom-gradient">Timeless</span> Wisdom
         </h1>
 
-        <p class="text-xl md:text-2xl leading-relaxed max-w-xl mb-10 font-bold" style="color:#1a1a2e;">
-          Master the Bhagavad Gita one verse at a time.<br>1 minute a day is all it takes.
+        <p class="text-xl leading-relaxed mb-10 font-bold" style="color:#1a1a2e;opacity:.55;max-width:420px;">
+          One verse at a time.<br>1 minute a day is all it takes.
         </p>
 
-        <div class="flex items-center justify-start gap-3 mb-8">
+        <div class="flex items-center gap-3 mb-8">
           <a href="https://apps.apple.com/us/iphone/search?term=gita%20streak" target="_blank" rel="noopener"
-            class="flex items-center gap-3 px-5 py-3 rounded-2xl text-white transition-all duration-300 hover:-translate-y-0.5"
-            style="background:rgba(50,46,40,0.75);border:1.5px solid rgba(255,149,0,0.4);box-shadow:0 4px 18px rgba(0,0,0,0.25);backdrop-filter:blur(10px);">
+            class="flex items-center gap-3 px-5 py-3 rounded-2xl transition-all duration-300 hover:-translate-y-0.5"
+            style="background:#1a1a2e;border:1.5px solid rgba(255,149,0,0.35);box-shadow:0 4px 18px rgba(26,26,46,0.18);color:#fff;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
             <div class="text-left">
-              <p class="text-white/55 text-[10px] font-medium leading-none mb-0.5">Download on the</p>
+              <p style="color:rgba(255,255,255,.55);font-size:10px;font-weight:500;line-height:1;margin-bottom:2px;">Download on the</p>
               <p class="font-bold text-sm leading-none">App Store</p>
             </div>
           </a>
           <a href="https://play.google.com/store/search?q=gita%20streak&c=apps&hl=en_US" target="_blank" rel="noopener"
-            class="flex items-center gap-3 px-5 py-3 rounded-2xl text-white transition-all duration-300 hover:-translate-y-0.5"
-            style="background:rgba(50,46,40,0.75);border:1.5px solid rgba(255,149,0,0.4);box-shadow:0 4px 18px rgba(0,0,0,0.25);backdrop-filter:blur(10px);">
+            class="flex items-center gap-3 px-5 py-3 rounded-2xl transition-all duration-300 hover:-translate-y-0.5"
+            style="background:#1a1a2e;border:1.5px solid rgba(255,149,0,0.35);box-shadow:0 4px 18px rgba(26,26,46,0.18);color:#fff;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z" />
+              <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/>
             </svg>
             <div class="text-left">
-              <p class="text-white/55 text-[10px] font-medium leading-none mb-0.5">Get it on</p>
+              <p style="color:rgba(255,255,255,.55);font-size:10px;font-weight:500;line-height:1;margin-bottom:2px;">Get it on</p>
               <p class="font-bold text-sm leading-none">Google Play</p>
             </div>
           </a>
         </div>
 
-        <div class="flex items-center gap-6 mt-2">
-          <span class="text-4xl md:text-5xl font-black text-white leading-none tracking-tight">100% Free</span>
-          <span class="text-white/25 text-3xl font-thin">|</span>
-          <span class="text-4xl md:text-5xl font-black text-white leading-none tracking-tight">No Ads Ever</span>
-        </div>
-
-        <!-- Scroll hint -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style="opacity:.65;">
-          <span class="text-white text-[10px] font-bold tracking-[.18em] uppercase">Scroll to explore</span>
-          <div class="w-5 h-8 border-2 border-white/50 rounded-full flex items-start justify-center pt-1.5">
-            <div class="w-1 h-2 bg-white rounded-full" style="animation:scrollDot 1.8s ease-in-out infinite;"></div>
-          </div>
-        </div>
-
-        <!-- Frame counter (dev/polish aid) -->
-        <div id="heroFrameLabel"
-          style="position:absolute;bottom:10px;right:14px;font-size:10px;font-family:monospace;color:rgba(255,255,255,.28);pointer-events:none;z-index:30;letter-spacing:.06em;">
-          01 / 50</div>
-
-      </section>
-
-      <!-- Thin progress bar at very bottom of sticky -->
-      <div
-        style="position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(255,255,255,.10);z-index:20;pointer-events:none;">
-        <div id="heroScrubBar"
-          style="height:100%;width:0%;background:linear-gradient(90deg,#FF9500,#F4D03F);transition:width .08s linear;">
+        <div class="flex items-center gap-6">
+          <span class="text-3xl md:text-4xl font-black leading-none tracking-tight" style="color:#1a1a2e;">100% Free</span>
+          <span style="color:#1a1a2e;opacity:.2;font-size:2rem;font-weight:100;">|</span>
+          <span class="text-3xl md:text-4xl font-black leading-none tracking-tight" style="color:#1a1a2e;">No Ads Ever</span>
         </div>
       </div>
 
+      <!-- RIGHT: 3 device images — same layout as journey section -->
+      <div style="flex:1;position:relative;height:792px;max-width:40%;top:90px;">
+
+        <!-- Device 4 — left -->
+        <div id="heroDevice4" style="position:absolute;left:0;bottom:170px;width:55%;z-index:1;transition:left .05s linear;">
+          <img src="Device4 Background Removed.png" alt="Journey"
+            style="width:100%;filter:drop-shadow(0 24px 48px rgba(255,149,0,.25)) drop-shadow(0 4px 16px rgba(0,0,0,.10));">
+        </div>
+
+        <!-- Device 2 — pushed right, hero -->
+        <div style="position:absolute;left:67%;transform:translateX(-50%);bottom:100px;width:78%;z-index:3;">
+          <img src="Device2 Background Removed.png" alt="Verse of the Day"
+            style="width:100%;filter:drop-shadow(0 40px 80px rgba(255,149,0,.28)) drop-shadow(0 8px 24px rgba(0,0,0,.14));">
+        </div>
+
+        <!-- Device 3 — right, cropped edge -->
+        <div id="heroDevice3" style="position:absolute;right:-217px;bottom:138px;width:63%;z-index:2;transition:right .05s linear;">
+          <img src="Device3 Background Removed.png" alt="Journal"
+            style="width:100%;filter:drop-shadow(0 24px 48px rgba(244,208,63,.20)) drop-shadow(0 4px 16px rgba(0,0,0,.10));mask-image:linear-gradient(to left,black 65%,transparent 100%);-webkit-mask-image:linear-gradient(to left,black 65%,transparent 100%);">
+        </div>
+
+      </div>
+
     </div>
-  </div>
+
+    <!-- Scroll hint -->
+    <div id="scrollHint" style="position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:20;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.45;transition:opacity .4s ease;">
+      <span style="color:#1a1a2e;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;">Scroll to explore</span>
+      <div style="width:20px;height:32px;border:2px solid rgba(26,26,46,.35);border-radius:999px;display:flex;align-items:flex-start;justify-content:center;padding-top:6px;">
+        <div style="width:4px;height:8px;background:#1a1a2e;border-radius:999px;animation:heroScrollDot 1.8s ease-in-out infinite;"></div>
+      </div>
+    </div>
+
+  </section>
 
 
 
@@ -1618,160 +1644,77 @@
   <!-- VERSES MARQUEE                          -->
   <!-- ══════════════════════════════════════ -->
   <!-- ══════════════════════════════════════ -->
-  <!-- STAT CARD (dark)            gs=2       -->
-  <!-- Globe glows on the navy card!          -->
+  <!-- JOURNEY SCROLL STAGE                  -->
   <!-- ══════════════════════════════════════ -->
-  <section style="background:#fff8f0;padding:0;position:relative;">
-    <div id="journey-heading" style="position:absolute;top:110px;"></div>
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
+  <div id="journeyScrollStage" style="position:relative;height:270vh;background:#0a0a12;">
+    <div style="position:sticky;top:0;height:100vh;overflow:hidden;">
 
-        <!-- LEFT: Text & journey steps -->
-        <div>
-          <h2 class="text-4xl md:text-5xl font-black text-navy leading-[1.06] mb-5">Your journey,<br>one verse <span
-              class="wisdom-gradient">at a time.</span></h2>
-          <p class="text-navy/50 text-base leading-relaxed mb-10">From the moment you open the app to your daily moment
-            of stillness — Gita Streak walks with you every step of the way.</p>
+      <!-- Full-screen canvas -->
+      <canvas id="journeyCanvas" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;background:#0a0a12;"></canvas>
 
-          <!-- Journey steps -->
-          <div class="flex flex-col gap-7">
+      <!-- Left-to-right gradient so text is readable -->
+      <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 38%,rgba(0,0,0,.10) 65%,transparent 100%);"></div>
 
-            <div class="flex gap-4 items-start">
-              <div class="w-10 h-10 rounded-2xl flex-shrink-0 flex items-center justify-center"
-                style="background:rgba(255,149,0,.12);border:1px solid rgba(255,149,0,.25);">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
+      <!-- Anchor for nav -->
+      <div id="journey-heading" style="position:absolute;top:110px;z-index:2;"></div>
+
+      <!-- Text overlay — left column -->
+      <div style="position:absolute;inset:0;z-index:2;display:flex;align-items:center;padding:80px 80px 40px;">
+        <div style="max-width:440px;">
+          <h2 class="text-4xl md:text-5xl font-black text-white leading-[1.06] mb-4">Your journey,<br>one verse <span class="wisdom-gradient">at a time.</span></h2>
+          <p class="text-white/60 text-sm leading-relaxed mb-7">From the moment you open the app to your daily moment of stillness — Gita Streak walks with you every step.</p>
+
+          <div class="flex flex-col gap-5">
+            <div class="flex gap-3 items-start">
+              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               </div>
               <div>
-                <p class="text-navy font-black text-sm mb-0.5">Start your journey</p>
-                <p class="text-navy/45 text-xs leading-relaxed">Pick up where the ancient sages left off. Your path
-                  through 18 chapters begins with a single verse.</p>
+                <p class="text-white font-black text-sm mb-0.5">Start your journey</p>
+                <p class="text-white/45 text-xs leading-relaxed">18 chapters, one verse at a time. Your path begins here.</p>
               </div>
             </div>
-
-            <div class="flex gap-4 items-start">
-              <div class="w-10 h-10 rounded-2xl flex-shrink-0 flex items-center justify-center"
-                style="background:rgba(255,149,0,.12);border:1px solid rgba(255,149,0,.25);">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                </svg>
+            <div class="flex gap-3 items-start">
+              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
               </div>
               <div>
-                <p class="text-navy font-black text-sm mb-0.5">Verse of the day & daily push notifications</p>
-                <p class="text-navy/45 text-xs leading-relaxed">A fresh verse delivered to you every morning. A gentle
-                  nudge so your practice never slips.</p>
+                <p class="text-white font-black text-sm mb-0.5">Daily verse & push notifications</p>
+                <p class="text-white/45 text-xs leading-relaxed">A fresh verse every morning so your practice never slips.</p>
               </div>
             </div>
-
-            <div class="flex gap-4 items-start">
-              <div class="w-10 h-10 rounded-2xl flex-shrink-0 flex items-center justify-center"
-                style="background:rgba(255,149,0,.12);border:1px solid rgba(255,149,0,.25);">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 20h9" />
-                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-                </svg>
+            <div class="flex gap-3 items-start">
+              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
               </div>
               <div>
-                <p class="text-navy font-black text-sm mb-0.5">Reflect & journal</p>
-                <p class="text-navy/45 text-xs leading-relaxed">Write your thoughts on each verse. Watch your
-                  understanding — and yourself — grow over time.</p>
+                <p class="text-white font-black text-sm mb-0.5">Reflect & journal</p>
+                <p class="text-white/45 text-xs leading-relaxed">Write your thoughts. Watch your understanding grow.</p>
               </div>
             </div>
-
-            <div class="flex gap-4 items-start">
-              <div class="w-10 h-10 rounded-2xl flex-shrink-0 flex items-center justify-center"
-                style="background:rgba(255,149,0,.12);border:1px solid rgba(255,149,0,.25);">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 22 12 17.27 5.8 22l2.39-8.14L2 9.36h7.61z" />
-                </svg>
+            <div class="flex gap-3 items-start">
+              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 22 12 17.27 5.8 22l2.39-8.14L2 9.36h7.61z"/></svg>
               </div>
               <div>
-                <p class="text-navy font-black text-sm mb-0.5">Earn Karma & level up</p>
-                <p class="text-navy/45 text-xs leading-relaxed">Every streak, quiz, and journal entry earns Karma Coins.
-                  Climb through 22 ranks to liberation.</p>
+                <p class="text-white font-black text-sm mb-0.5">Earn Karma & level up</p>
+                <p class="text-white/45 text-xs leading-relaxed">Every streak earns Karma Coins. Climb 22 ranks to liberation.</p>
               </div>
             </div>
-
           </div>
 
-          <!-- Stats -->
-          <div class="flex gap-8 mt-10 pt-8" style="border-top:1px solid rgba(26,26,46,.08);">
-            <div>
-              <p class="text-3xl font-black text-navy"><span data-count="120">120</span><span
-                  class="text-saffron">+</span></p>
-              <p class="text-navy/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Lessons</p>
-            </div>
-            <div>
-              <p class="text-3xl font-black" style="color:#F4D03F;"><span data-count="701">701</span></p>
-              <p class="text-navy/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Verses</p>
-            </div>
-            <div>
-              <p class="text-3xl font-black text-navy"><span data-count="18">18</span></p>
-              <p class="text-navy/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Chapters</p>
-            </div>
-            <div>
-              <p class="text-3xl font-black text-saffron"><span data-count="22">22</span></p>
-              <p class="text-navy/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Karma Ranks</p>
-            </div>
+          <div class="flex gap-8 mt-8 pt-6" style="border-top:1px solid rgba(255,255,255,.12);">
+            <div><p class="text-2xl font-black text-white"><span data-count="120">120</span><span class="text-saffron">+</span></p><p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Lessons</p></div>
+            <div><p class="text-2xl font-black" style="color:#F4D03F;"><span data-count="701">701</span></p><p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Verses</p></div>
+            <div><p class="text-2xl font-black text-white"><span data-count="18">18</span></p><p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Chapters</p></div>
+            <div><p class="text-2xl font-black text-saffron"><span data-count="22">22</span></p><p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Karma Ranks</p></div>
           </div>
         </div>
-
-        <!-- RIGHT: 3 devices — modern overlapping layout -->
-        <div class="relative" style="height:800px;">
-
-          <!-- Device 4 — left -->
-          <div style="position:absolute;left:0;bottom:170px;width:55%;z-index:1;">
-            <img src="Device4 Background Removed.png" alt="Journey"
-              style="width:100%;filter:drop-shadow(0 24px 48px rgba(255,149,0,.25)) drop-shadow(0 4px 16px rgba(0,0,0,.12));">
-          </div>
-
-          <!-- Device 2 — pushed right, hero -->
-          <div style="position:absolute;left:67%;transform:translateX(-50%);bottom:100px;width:78%;z-index:3;">
-            <img src="Device2 Background Removed.png" alt="Verse of the Day"
-              style="width:100%;filter:drop-shadow(0 40px 80px rgba(255,149,0,.32)) drop-shadow(0 8px 24px rgba(0,0,0,.18));">
-          </div>
-
-          <!-- Device 3 — right, cropped edge -->
-          <div style="position:absolute;right:-197px;bottom:138px;width:63%;z-index:2;">
-            <img src="Device3 Background Removed.png" alt="Journal"
-              style="width:100%;filter:drop-shadow(0 24px 48px rgba(244,208,63,.25)) drop-shadow(0 4px 16px rgba(0,0,0,.12));mask-image:linear-gradient(to left,black 65%,transparent 100%);-webkit-mask-image:linear-gradient(to left,black 65%,transparent 100%);">
-          </div>
-
-        </div>
-
       </div>
+
     </div>
-  </section>
+  </div>
 
-  <section id="marquee-section" class="pb-6" style="background:#fff8f0;">
-    <div class="marquee">
-      <div class="marquee-track">
-        <span class="marquee-item">You have a right to action <span class="ref">2:47</span></span>
-        <span class="marquee-item">The soul is never born nor dies <span class="ref">2:20</span></span>
-        <span class="marquee-item">Calm the restless mind <span class="ref">6:35</span></span>
-        <span class="marquee-item">Do your duty, leave the fruit <span class="ref">2:48</span></span>
-        <span class="marquee-item">All paths lead back to Me <span class="ref">4:11</span></span>
-        <span class="marquee-item">Even a leaf, offered with love <span class="ref">9:26</span></span>
-        <span class="dot" aria-hidden="true"></span>
-      </div>
-      <div class="marquee-track" aria-hidden="true">
-        <span class="marquee-item">You have a right to action <span class="ref">2:47</span></span>
-        <span class="marquee-item">The soul is never born nor dies <span class="ref">2:20</span></span>
-        <span class="marquee-item">Calm the restless mind <span class="ref">6:35</span></span>
-        <span class="marquee-item">Do your duty, leave the fruit <span class="ref">2:48</span></span>
-        <span class="marquee-item">All paths lead back to Me <span class="ref">4:11</span></span>
-        <span class="marquee-item">Even a leaf, offered with love <span class="ref">9:26</span></span>
-        <span class="dot" aria-hidden="true"></span>
-      </div>
-    </div>
-  </section>
 
 
   <!-- ══════════════════════════════════════ -->
@@ -1999,7 +1942,7 @@
 
         <!-- Big icon -->
         <div style="flex-shrink:0;">
-          <img src="icon.png" alt="Gita Streak" style="width:140px;height:140px;object-fit:cover;border-radius:32px;box-shadow:0 20px 60px rgba(0,0,0,0.25),0 2px 0 rgba(255,255,255,0.15) inset;">
+          <img src="icon3.jpeg" alt="Gita Streak" style="width:140px;height:140px;object-fit:cover;object-position:center;border-radius:32px;box-shadow:0 20px 60px rgba(0,0,0,0.25),0 2px 0 rgba(255,255,255,0.15) inset;">
         </div>
 
         <!-- Heading + store buttons -->
@@ -2025,36 +1968,48 @@
 
       <!-- Bottom: FAQ -->
       <div id="faq" style="scroll-margin-top:20px;">
-        <p class="text-white font-black text-2xl mb-6">Questions?</p>
-        <div class="grid md:grid-cols-2 gap-3">
-          <div class="faq-item rounded-2xl overflow-hidden" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.20);">
-            <button class="faq-question w-full text-left px-5 py-4 flex justify-between items-center gap-4 font-semibold text-white text-sm">
+
+        <!-- Header row -->
+        <div class="flex items-end justify-between mb-8">
+          <h2 class="text-3xl md:text-4xl font-black text-white leading-none">Questions?</h2>
+          <p class="text-white/45 text-sm font-medium">Hover to expand</p>
+        </div>
+
+        <!-- FAQ items — single column, full width -->
+        <div class="flex flex-col gap-2">
+
+          <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+            <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
               <span>Is it free?</span>
-              <svg class="faq-chevron w-4 h-4 text-white/60 flex-shrink-0 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer px-5"><div class="pb-4 pt-1 text-white/65 text-xs leading-relaxed border-t border-white/15">Yes — core lessons, streaks, Karma Coins, and Gopi are free forever.</div></div>
+            <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Yes. Core lessons, streaks, Karma Coins, and Gopi are free forever. Always.</div></div>
           </div>
-          <div class="faq-item rounded-2xl overflow-hidden" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.20);">
-            <button class="faq-question w-full text-left px-5 py-4 flex justify-between items-center gap-4 font-semibold text-white text-sm">
+
+          <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+            <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
               <span>Do I need to know Sanskrit?</span>
-              <svg class="faq-chevron w-4 h-4 text-white/60 flex-shrink-0 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer px-5"><div class="pb-4 pt-1 text-white/65 text-xs leading-relaxed border-t border-white/15">Not at all. Every lesson is in plain English. If an 8-year-old can't understand it, we rewrite it.</div></div>
+            <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Not at all. Every lesson is in plain English. If an 8-year-old can't understand it, we rewrite it.</div></div>
           </div>
-          <div class="faq-item rounded-2xl overflow-hidden" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.20);">
-            <button class="faq-question w-full text-left px-5 py-4 flex justify-between items-center gap-4 font-semibold text-white text-sm">
+
+          <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+            <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
               <span>iOS or Android?</span>
-              <svg class="faq-chevron w-4 h-4 text-white/60 flex-shrink-0 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer px-5"><div class="pb-4 pt-1 text-white/65 text-xs leading-relaxed border-t border-white/15">Both. Built with React Native + Expo — works beautifully on iPhone and Android.</div></div>
+            <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Both. Built with React Native — works beautifully on iPhone and Android.</div></div>
           </div>
-          <div class="faq-item rounded-2xl overflow-hidden" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.20);">
-            <button class="faq-question w-full text-left px-5 py-4 flex justify-between items-center gap-4 font-semibold text-white text-sm">
+
+          <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+            <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
               <span>How long to finish all 120 lessons?</span>
-              <svg class="faq-chevron w-4 h-4 text-white/60 flex-shrink-0 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer px-5"><div class="pb-4 pt-1 text-white/65 text-xs leading-relaxed border-t border-white/15">At one lesson a day, about 4 months. The Gita rewards patience — there's no rush.</div></div>
+            <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">At one lesson a day, about 4 months. The Gita rewards patience — there's no rush.</div></div>
           </div>
+
         </div>
       </div>
 
@@ -2068,43 +2023,33 @@
   <section id="maker" class="bg-cream py-24">
     <div class="max-w-4xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-14 items-center">
+
+        <!-- Avatar card -->
         <div class="text-center">
-          <div
-            class="w-52 h-64 brand-panel rounded-[32px] mx-auto flex flex-col items-center justify-center border border-saffron/15 shadow-lg overflow-hidden relative">
+          <div class="w-52 h-64 brand-panel rounded-[32px] mx-auto flex flex-col items-center justify-center border border-saffron/15 shadow-lg overflow-hidden relative">
             <div class="ring r1" style="width:130px;height:130px;right:-30px;top:-30px;"></div>
             <div class="ring r2" style="width:200px;height:200px;left:-60px;bottom:-60px;"></div>
-            <div
-              class="relative z-10 w-24 h-24 rounded-full bg-navy text-saffron flex items-center justify-center text-3xl font-black tracking-tight shadow-xl">
-              J
-            </div>
+            <div class="relative z-10 w-24 h-24 rounded-full bg-navy text-saffron flex items-center justify-center text-3xl font-black tracking-tight shadow-xl">J</div>
             <p class="relative z-10 mt-4 text-navy font-black text-sm">Jeyanth</p>
-            <p class="relative z-10 text-navy/45 text-[10px] font-bold tracking-[.18em] uppercase mt-0.5">Founder ·
-              Engineer</p>
+            <p class="relative z-10 text-navy/45 text-[10px] font-bold tracking-[.18em] uppercase mt-0.5">Founder · Engineer</p>
           </div>
           <div class="mt-5 inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 border border-navy/8">
             <div class="w-4 h-4 rounded-full bg-navy flex items-center justify-center">
               <div class="w-1.5 h-1.5 rounded-full bg-saffron"></div>
             </div>
-            <span class="text-navy text-xs font-black">JeyStack LLC</span>
+            <span class="text-navy text-xs font-black">JeyStack</span>
           </div>
         </div>
+
+        <!-- Story -->
         <div>
           <p class="text-saffron text-xs font-black tracking-[.15em] uppercase mb-4">The Maker</p>
-          <h2 class="text-2xl md:text-3xl font-black text-navy mb-5 leading-tight">Hi, I'm Jeyanth.</h2>
-          <p class="text-navy/60 text-base leading-relaxed mb-4">I grew up with the Gita on the bookshelf admired but
-            never really read. When I finally sat down with it as an adult, it changed how I think about work, stress,
-            and who I'm trying to become.</p>
-          <p class="text-navy/55 text-base leading-relaxed mb-9">I built Gita Streak because I wanted an app that made
-            this wisdom as approachable as a podcast. Building in public. All 701 verses. Zero fluff.</p>
-          <div class="flex flex-wrap gap-3">
-            <span class="bg-white text-navy/60 text-xs font-semibold px-4 py-2 rounded-full border border-navy/8">📍
-              Building in public</span>
-            <span class="bg-white text-navy/60 text-xs font-semibold px-4 py-2 rounded-full border border-navy/8">🛠️
-              React Native + .NET 8</span>
-            <span class="bg-white text-navy/60 text-xs font-semibold px-4 py-2 rounded-full border border-navy/8">☁️
-              AWS</span>
-          </div>
+          <h2 class="text-2xl md:text-3xl font-black text-navy mb-6 leading-tight">Hi, I'm Jeyanth.</h2>
+          <p class="text-navy/65 text-base leading-relaxed mb-5">I grew up with the Gita on the bookshelf admired but never really read. When I finally sat down with it as an adult, it changed how I think about work, stress and who I'm trying to become.</p>
+          <p class="text-navy/65 text-base leading-relaxed mb-5">The Gita changed how I think about work, pressure, and purpose. I wanted to build something that could do the same for anyone, anywhere. Completely free, no distractions, just the teaching.</p>
+          <p class="text-navy/65 text-base leading-relaxed">I built Gita Streak because the wisdom of the Bhagavad Gita deserves to be in everyone's hands. Not locked behind paywalls, not buried under ads, not watered down.</p>
         </div>
+
       </div>
     </div>
   </section>
@@ -2114,22 +2059,37 @@
   <!-- ══════════════════════════════════════ -->
   <!-- FOOTER                                 -->
   <!-- ══════════════════════════════════════ -->
+  <section id="marquee-section" class="py-6" style="background:#fff8f0;">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="marquee-item">You have a right to action <span class="ref">2:47</span></span>
+        <span class="marquee-item">The soul is never born nor dies <span class="ref">2:20</span></span>
+        <span class="marquee-item">Calm the restless mind <span class="ref">6:35</span></span>
+        <span class="marquee-item">Do your duty, leave the fruit <span class="ref">2:48</span></span>
+        <span class="marquee-item">All paths lead back to Me <span class="ref">4:11</span></span>
+        <span class="marquee-item">Even a leaf, offered with love <span class="ref">9:26</span></span>
+        <span class="dot" aria-hidden="true"></span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span class="marquee-item">You have a right to action <span class="ref">2:47</span></span>
+        <span class="marquee-item">The soul is never born nor dies <span class="ref">2:20</span></span>
+        <span class="marquee-item">Calm the restless mind <span class="ref">6:35</span></span>
+        <span class="marquee-item">Do your duty, leave the fruit <span class="ref">2:48</span></span>
+        <span class="marquee-item">All paths lead back to Me <span class="ref">4:11</span></span>
+        <span class="marquee-item">Even a leaf, offered with love <span class="ref">9:26</span></span>
+        <span class="dot" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
   <footer class="bg-navy border-t border-white/5 pt-16 pb-10">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
         <div class="col-span-2 md:col-span-1">
-          <a href="#" class="flex items-center gap-2 mb-4">
-            <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
-              <ellipse cx="50" cy="22" rx="8" ry="22" fill="#FF9500" opacity="0.9" transform="rotate(0 50 50)" />
-              <ellipse cx="50" cy="22" rx="8" ry="22" fill="#FF9500" opacity="0.9" transform="rotate(90 50 50)" />
-              <ellipse cx="50" cy="22" rx="8" ry="22" fill="#FF9500" opacity="0.65" transform="rotate(45 50 50)" />
-              <ellipse cx="50" cy="22" rx="8" ry="22" fill="#FF9500" opacity="0.65" transform="rotate(135 50 50)" />
-              <circle cx="50" cy="50" r="10" fill="#FF9500" />
-            </svg>
+          <a href="#" class="flex items-center gap-2.5 mb-4">
+            <img src="icon3.jpeg" alt="Gita Streak" style="width:32px;height:32px;object-fit:cover;object-position:center;border-radius:8px;">
             <span class="text-white font-black text-sm">Gita Streak</span>
           </a>
-          <p class="text-white/60 text-xs leading-relaxed">Transform your routine with timeless wisdom that never goes
-            out of season.</p>
         </div>
         <div>
           <p class="text-white font-black text-sm mb-5">About</p>
@@ -2155,19 +2115,9 @@
             <li><span class="cursor-pointer hover:text-white/70 transition-colors">Terms of Service</span></li>
           </ul>
         </div>
-        <div>
-          <p class="text-white font-black text-sm mb-5">Follow Us</p>
-          <ul class="space-y-3 text-white/55 text-xs">
-            <li><span class="cursor-pointer hover:text-white/70 transition-colors">Twitter / X</span></li>
-            <li><span class="cursor-pointer hover:text-white/70 transition-colors">Instagram</span></li>
-            <li><span class="cursor-pointer hover:text-white/70 transition-colors">LinkedIn</span></li>
-            <li><span class="cursor-pointer hover:text-white/70 transition-colors">YouTube</span></li>
-          </ul>
-        </div>
       </div>
       <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
         <p class="text-white/65 text-xs">© 2026 JeyStack LLC. All rights reserved.</p>
-        <p class="text-white/55 text-xs">Built with devotion. Powered by AWS.</p>
       </div>
     </div>
   </footer>
@@ -2344,32 +2294,171 @@
       }, { passive: true });
     })();
 
+
+
+
+    /* ── Hero cursor-reactive gradient ──────────────── */
+    (function () {
+      const hero = document.getElementById('hero');
+      const glow = document.getElementById('heroCursorGlow');
+      if (!hero || !glow) return;
+      let raf = 0;
+      hero.addEventListener('mousemove', e => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const r = hero.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+          const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+          glow.style.background = `radial-gradient(440px circle at ${x}% ${y}%,rgba(255,149,0,.42) 0%,rgba(255,170,50,.22) 35%,rgba(255,210,120,.08) 58%,transparent 72%)`;
+        });
+      });
+      hero.addEventListener('mouseleave', () => {
+        glow.style.background = 'radial-gradient(520px circle at 65% 50%,rgba(255,149,0,.28) 0%,rgba(255,180,80,.14) 40%,transparent 65%)';
+      });
+    })();
+
     /* ════════════════════════════════════════════════════
-       HERO FRAME SCRUB Apple-style scroll-driven sequence
-       50 frames in /video/01.png … /video/50.png
+       HERO DEVICE ENTRANCE ANIMATION
     ════════════════════════════════════════════════════ */
     (function () {
-      const TOTAL = 175;
-      const canvas = document.getElementById('heroCanvas');
-      const stage = document.getElementById('heroScrollStage');
-      const bar = document.getElementById('heroScrubBar');
-      const label = document.getElementById('heroFrameLabel');
+      const d4 = document.getElementById('heroDevice4');
+      const d3 = document.getElementById('heroDevice3');
+      if (!d4 || !d3) return;
+
+      window._heroAnimDone = false;
+
+      // Start: both devices hidden, stacked behind Device 2 (center ~42% of container)
+      d4.style.transition = 'none';
+      d4.style.left = '42%';
+      d4.style.opacity = '0';
+      d4.style.transform = 'scale(0.88)';
+
+      d3.style.transition = 'none';
+      d3.style.right = '32%';
+      d3.style.opacity = '0';
+      d3.style.transform = 'scale(0.88)';
+
+      // Two rAF passes to flush the initial style, then kick off the animation
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        setTimeout(() => {
+          const spring = '4s cubic-bezier(0.16, 1, 0.3, 1)';
+          d4.style.transition = `left ${spring}, opacity 1.8s ease, transform ${spring}`;
+          d3.style.transition = `right ${spring}, opacity 1.8s ease, transform ${spring}`;
+
+          d4.style.left = '0%';
+          d4.style.opacity = '1';
+          d4.style.transform = '';
+
+          d3.style.right = '-217px';
+          d3.style.opacity = '1';
+          d3.style.transform = '';
+
+          // Hand off to scroll handler once entrance is done
+          setTimeout(() => {
+            window._heroAnimDone = true;
+            d4.style.transition = 'left .05s linear';
+            d3.style.transition = 'right .05s linear';
+          }, 4100);
+        }, 180);
+      }));
+    })();
+
+    /* ════════════════════════════════════════════════════
+       HERO DEVICE CONVERGENCE — scroll-driven
+    ════════════════════════════════════════════════════ */
+    (function () {
+      const d4 = document.getElementById('heroDevice4');
+      const d3 = document.getElementById('heroDevice3');
+      if (!d4 || !d3) return;
+
+      function eio(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+
+      function update() {
+        if (!window._heroAnimDone) return;
+        const raw = Math.max(0, Math.min(1, window.scrollY / window.innerHeight));
+        const p = eio(raw);
+        if (!window._hoverD4) d4.style.left = (p * 18) + '%';
+        if (!window._hoverD3) d3.style.right = (-217 + p * 157) + 'px';
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+
+    /* ════════════════════════════════════════════════════
+       HERO DEVICE HOVER OSCILLATION
+    ════════════════════════════════════════════════════ */
+    (function () {
+      const d4 = document.getElementById('heroDevice4');
+      const d3 = document.getElementById('heroDevice3');
+      if (!d4 || !d3) return;
+
+      // One full in-and-out cycle every 10 s
+      const FREQ = (2 * Math.PI) / 10000;
+
+      function oscillate(el, flagKey, getBase, apply) {
+        let raf, t0, base;
+
+        el.addEventListener('mouseenter', () => {
+          window[flagKey] = true;
+          base = getBase(el);
+          t0 = performance.now();
+          el.style.transition = 'none';
+
+          function tick(now) {
+            // (1 - cos) / 2 → smooth 0→1→0 wave
+            const wave = (1 - Math.cos((now - t0) * FREQ)) / 2;
+            apply(el, base, wave);
+            raf = requestAnimationFrame(tick);
+          }
+          raf = requestAnimationFrame(tick);
+        });
+
+        el.addEventListener('mouseleave', () => {
+          cancelAnimationFrame(raf);
+          window[flagKey] = false;
+          // Ease back to base
+          el.style.transition = 'left 0.8s cubic-bezier(0.16,1,0.3,1), right 0.8s cubic-bezier(0.16,1,0.3,1)';
+          apply(el, base, 0);
+          setTimeout(() => { el.style.transition = 'left .05s linear, right .05s linear'; }, 850);
+        });
+      }
+
+      // Device 4 — slides right (inward) by up to 10%
+      oscillate(
+        d4, '_hoverD4',
+        el => parseFloat(el.style.left) || 0,
+        (el, base, w) => { el.style.left = (base + w * 10) + '%'; }
+      );
+
+      // Device 3 — slides left (inward) by up to 80px
+      oscillate(
+        d3, '_hoverD3',
+        el => parseFloat(el.style.right) || -217,
+        (el, base, w) => { el.style.right = (base + w * 80) + 'px'; }
+      );
+    })();
+
+    /* ════════════════════════════════════════════════════
+       JOURNEY FRAME SCRUB — 240 frames, scroll-driven
+    ════════════════════════════════════════════════════ */
+    (function () {
+      const TOTAL = 240;
+      const canvas = document.getElementById('journeyCanvas');
+      const stage = document.getElementById('journeyScrollStage');
       if (!canvas || !stage) return;
 
       const ctx = canvas.getContext('2d');
       let lastIdx = 0;
       let rafPending = false;
 
-      /* Pre-load all frames — browser queues & caches them automatically */
       const imgs = Array.from({ length: TOTAL }, (_, i) => {
         const img = new Image();
         img.src = `video/ezgif-frame-${String(i + 1).padStart(3, '0')}.jpg`;
-        /* Re-render if this frame arrives while it's the one we need */
         img.onload = () => { if (i === lastIdx) render(i); };
         return img;
       });
 
-      /* Resize canvas to fill its CSS box (call after layout) */
       function resize() {
         canvas.width = canvas.offsetWidth * (window.devicePixelRatio || 1);
         canvas.height = canvas.offsetHeight * (window.devicePixelRatio || 1);
@@ -2377,11 +2466,9 @@
         render(lastIdx);
       }
 
-      /* Cover-fit draw */
       function render(idx) {
         const img = imgs[idx];
         if (!img || !img.complete || !img.naturalWidth) {
-          /* Fall back to nearest already-loaded frame */
           for (let d = 1; d < TOTAL; d++) {
             const lo = idx - d, hi = idx + d;
             if (lo >= 0 && imgs[lo].complete && imgs[lo].naturalWidth) { render(lo); return; }
@@ -2395,19 +2482,12 @@
         const dx = (cw - iw * scale) / 2, dy = (ch - ih * scale) / 2;
         ctx.clearRect(0, 0, cw, ch);
         ctx.drawImage(img, dx, dy, iw * scale, ih * scale);
-
-        const pct = (idx / (TOTAL - 1)) * 100;
-        if (bar) bar.style.width = pct + '%';
-        if (label) label.textContent = String(idx + 1).padStart(3, '0') + ' / 175';
       }
 
-      /* Draw frame 1 as soon as it loads */
       if (imgs[0].complete) { resize(); }
       else { imgs[0].onload = () => resize(); }
-
       window.addEventListener('resize', () => resize(), { passive: true });
 
-      /* Scroll → frame index (rAF-throttled) */
       window.addEventListener('scroll', () => {
         if (rafPending) return;
         rafPending = true;
@@ -2421,8 +2501,6 @@
         });
       }, { passive: true });
     })();
-
-
 
     document.addEventListener('DOMContentLoaded', function () {
 
@@ -2448,30 +2526,37 @@
         navInner.style.paddingBottom = shouldShrink ? '10px' : '22px';
       }, { passive: true });
 
-      // FAQ accordion
+      // FAQ accordion — hover to open, auto-close on leave
       document.querySelectorAll('.faq-item').forEach(item => {
-        const q = item.querySelector('.faq-question');
         const a = item.querySelector('.faq-answer');
         const c = item.querySelector('.faq-chevron');
         a.style.maxHeight = '0';
         a.style.overflow = 'hidden';
-        a.style.transition = 'max-height .38s ease';
-        q.addEventListener('click', () => {
-          const isOpen = a.dataset.open === '1';
+        a.style.transition = 'max-height .32s ease';
+        item.addEventListener('mouseenter', () => {
           document.querySelectorAll('.faq-item').forEach(o => {
-            o.querySelector('.faq-answer').style.maxHeight = '0';
-            o.querySelector('.faq-answer').dataset.open = '0';
-            o.querySelector('.faq-chevron').style.transform = 'rotate(0deg)';
-            o.querySelector('.faq-question').classList.remove('text-saffron');
+            if (o !== item) {
+              o.querySelector('.faq-answer').style.maxHeight = '0';
+              o.querySelector('.faq-chevron').style.transform = 'rotate(0deg)';
+            }
           });
-          if (!isOpen) {
-            a.style.maxHeight = a.scrollHeight + 'px';
-            a.dataset.open = '1';
-            c.style.transform = 'rotate(180deg)';
-            q.classList.add('text-saffron');
-          }
+          a.style.maxHeight = a.scrollHeight + 120 + 'px';
+          c.style.transform = 'rotate(180deg)';
+        });
+        item.addEventListener('mouseleave', () => {
+          a.style.maxHeight = '0';
+          c.style.transform = 'rotate(0deg)';
         });
       });
+
+      // Hide scroll hint on scroll
+      (function () {
+        const hint = document.getElementById('scrollHint');
+        if (!hint) return;
+        window.addEventListener('scroll', () => {
+          hint.style.opacity = window.scrollY > 40 ? '0' : '.45';
+        }, { passive: true });
+      })();
 
       // Smooth scroll for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -2635,6 +2720,31 @@
         });
       }, { threshold: 0.07 });
       document.querySelectorAll('.card-reveal').forEach(el => cardObs.observe(el));
+
+      /* ── 3D push-in tilt on practice glass cards ── */
+      document.querySelectorAll('#practice .glass-card').forEach(card => {
+        let raf = 0;
+        card.style.willChange = 'transform';
+        card.addEventListener('mousemove', e => {
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => {
+            const r = card.getBoundingClientRect();
+            const cx = (e.clientX - r.left) / r.width - 0.5;
+            const cy = (e.clientY - r.top) / r.height - 0.5;
+            const rotX = cy * -14;
+            const rotY = cx * 14;
+            card.style.transform = `perspective(700px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(0.96,0.96,0.96) translateZ(-8px)`;
+            card.style.transition = 'transform 0.08s linear';
+            card.style.boxShadow = `${-cx * 12}px ${-cy * 12}px 40px rgba(255,149,0,.22), 0 8px 32px rgba(0,0,0,.35), 0 1.5px 0 rgba(255,255,255,.10) inset`;
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          cancelAnimationFrame(raf);
+          card.style.transform = '';
+          card.style.boxShadow = '';
+          card.style.transition = 'transform 0.5s cubic-bezier(.16,1,.3,1), box-shadow 0.5s ease';
+        });
+      });
 
       /* ── 5. Stat number counters ───────────────────────── */
       function countUp(el, target, suffix, duration) {
