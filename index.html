@@ -7,15 +7,32 @@
   <title>Gita Streak Your Daily Bhagavad Gita Companion</title>
   <meta name="description"
     content="Learn the Bhagavad Gita one lesson at a time. 120 bite-sized lessons, daily streaks, Karma Coins, and Gopi your guide.">
-  <meta property="og:title" content="Gita Streak Ancient wisdom. Modern habits.">
-  <meta property="og:description"
-    content="Master the Bhagavad Gita in 5 minutes a day. 120 lessons, daily streaks, and Gopi your friendly guide.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#FF9500">
+  <link rel="canonical" href="https://gitastreak.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gitastreak.com/">
+  <meta property="og:title" content="Gita Streak — Ancient wisdom. Modern habits.">
+  <meta property="og:description" content="Master the Bhagavad Gita in 5 minutes a day. 120 lessons, daily streaks, and Gopi your friendly guide.">
+  <meta property="og:image" content="https://gitastreak.com/android-chrome-512x512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://gitastreak.com/">
+  <meta name="twitter:title" content="Gita Streak — Ancient wisdom. Modern habits.">
+  <meta name="twitter:description" content="Master the Bhagavad Gita in 5 minutes a day. 120 lessons, daily streaks, and Gopi your friendly guide.">
+  <meta name="twitter:image" content="https://gitastreak.com/android-chrome-512x512.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -38,17 +55,6 @@
       box-sizing: border-box;
     }
 
-    /* ── Fade-up ── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
 
     .delay-1 {
       transition-delay: .10s
@@ -95,58 +101,6 @@
     }
 
 
-    /* ════════════════════════════════════
-       PHONE FRAMES
-    ════════════════════════════════════ */
-    .phone-frame {
-      width: 240px;
-      height: 490px;
-      border: 9px solid #1A1A2E;
-      border-radius: 42px;
-      background: #FFF8F0;
-      overflow: hidden;
-      box-shadow: 0 32px 80px rgba(26, 26, 46, .22), 0 0 0 1px rgba(26, 26, 46, .05);
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .phone-frame::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 72px;
-      height: 20px;
-      background: #1A1A2E;
-      border-radius: 0 0 12px 12px;
-      z-index: 10;
-    }
-
-    .phone-sm {
-      width: 180px;
-      height: 370px;
-      border: 7px solid #1A1A2E;
-      border-radius: 36px;
-      background: #FFF8F0;
-      overflow: hidden;
-      box-shadow: 0 20px 48px rgba(26, 26, 46, .18);
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .phone-sm::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 54px;
-      height: 16px;
-      background: #1A1A2E;
-      border-radius: 0 0 10px 10px;
-      z-index: 10;
-    }
 
     /* ════════════════════════════════════
        MISC ANIMATIONS & UTILITIES
@@ -195,30 +149,6 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0
-    }
-
-    @keyframes featFloat {
-
-      0%,
-      100% {
-        transform: perspective(900px) rotateY(-22deg) rotateX(8deg) translateY(0px);
-      }
-
-      50% {
-        transform: perspective(900px) rotateY(-22deg) rotateX(8deg) translateY(-14px);
-      }
-    }
-
-    @keyframes featFloat2 {
-
-      0%,
-      100% {
-        transform: perspective(900px) rotateY(18deg) rotateX(-6deg) translateY(0px);
-      }
-
-      50% {
-        transform: perspective(900px) rotateY(18deg) rotateX(-6deg) translateY(-10px);
-      }
     }
 
     @keyframes notifSlide {
@@ -366,30 +296,6 @@
       animation: fillBar 1.5s ease .5s both
     }
 
-    .card-strip {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      padding-bottom: 8px;
-      scrollbar-width: none;
-      -ms-overflow-style: none
-    }
-
-    .card-strip::-webkit-scrollbar {
-      display: none
-    }
-
-    .tall-card {
-      border-radius: 28px;
-      overflow: hidden;
-      flex: 1;
-      min-width: 0
-    }
-
-    .orange-stripe {
-      background: #FF9500
-    }
-
     #mainNav {
       position: fixed;
       background: transparent !important;
@@ -424,19 +330,6 @@
 
     #mainNav.scrolled ul {
       gap: 20px;
-    }
-
-    #mainNav .nav-logo-text {
-      display: none;
-    }
-
-    #mainNav .nav-cta {
-      transition: padding .45s cubic-bezier(.16, 1, .3, 1), font-size .45s cubic-bezier(.16, 1, .3, 1);
-    }
-
-    #mainNav.scrolled .nav-cta {
-      padding: 8px 18px;
-      font-size: 12px;
     }
 
     /* ════════════════════════════════════
@@ -659,7 +552,7 @@
       font-weight: 800;
       font-size: 28px;
       letter-spacing: -.01em;
-      color: rgba(26, 26, 46, .78);
+      color: rgba(255, 248, 240, .82);
       white-space: nowrap;
     }
 
@@ -668,6 +561,7 @@
       height: 8px;
       border-radius: 50%;
       background: #FF9500;
+      box-shadow: 0 0 8px rgba(255,149,0,.6);
     }
 
     .marquee-item .ref {
@@ -675,9 +569,9 @@
       font-size: 13px;
       font-weight: 600;
       letter-spacing: .04em;
-      color: rgba(26, 26, 46, .35);
+      color: rgba(255, 248, 240, .38);
       padding: 6px 12px;
-      border: 1px solid rgba(26, 26, 46, .10);
+      border: 1px solid rgba(255, 248, 240, .12);
       border-radius: 999px;
     }
 
@@ -911,9 +805,51 @@
     }
 
     @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ── Maker section ── */
+    @keyframes makerOrb1 {
+      0%,100% { transform: translate(0,0) scale(1); opacity:.7; }
+      50%      { transform: translate(50px,30px) scale(1.15); opacity:1; }
+    }
+    @keyframes makerOrb2 {
+      0%,100% { transform: translate(0,0) scale(1); opacity:.5; }
+      50%      { transform: translate(-40px,-25px) scale(1.1); opacity:.8; }
+    }
+    @keyframes makerOrb3 {
+      0%,100% { transform: translate(0,0) scale(1); opacity:.4; }
+      50%      { transform: translate(20px,-40px) scale(1.08); opacity:.7; }
+    }
+    @keyframes photoGlowPulse {
+      0%,100% { opacity:.55; transform:scale(1); }
+      50%      { opacity:1; transform:scale(1.06); }
+    }
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @keyframes borderRing {
+      to { --angle: 360deg; }
+    }
+    .maker-border-ring {
+      animation: borderRing 4s linear infinite;
+    }
+    @keyframes chipFloat {
+      0%,100% { transform:translateY(0); }
+      50%      { transform:translateY(-4px); }
+    }
+    @keyframes makerFadeUp {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .maker-chip { animation: chipFloat 3.5s ease-in-out infinite; }
+    .maker-chip:nth-child(2) { animation-delay:.6s; }
+    .maker-chip:nth-child(3) { animation-delay:1.2s; }
+    @media (max-width:767px) {
+      #maker > div > div { grid-template-columns:1fr !important; gap:48px !important; }
+      #maker > div > div > div:first-child { align-items:center; }
     }
 
     .brand-panel .glyph {
@@ -1001,9 +937,6 @@
       background-image: linear-gradient(to bottom, #ffffff, var(--mood-bg)) !important;
     }
 
-    [data-mood] .orange-stripe {
-      background: var(--mood-primary) !important;
-    }
 
     [data-mood] .text-gradient {
       background-image: linear-gradient(135deg, var(--mood-primary), var(--mood-warm)) !important;
@@ -1192,7 +1125,7 @@
     <div class="pr-8 md:pr-14 flex items-center justify-between" style="padding-top:10px;padding-bottom:10px;padding-left:24px;">
       <!-- Left: logo + name -->
       <a href="#" class="flex items-center gap-2">
-        <img src="icon3.jpeg" alt="Gita Streak" style="width:44px;height:44px;object-fit:cover;object-position:center;border-radius:11px;">
+        <img loading="lazy" src="apple-touch-icon.png" alt="Gita Streak" style="width:44px;height:44px;object-fit:cover;object-position:center;border-radius:11px;">
         <span class="font-black tracking-tight" style="color:#1a1a2e;font-size:1.1rem;">Gita Streak</span>
       </a>
       <!-- Right: nav links + download -->
@@ -1334,15 +1267,10 @@
         <div>
           <p class="eyebrow mb-5">Daily Practice</p>
           <h2 id="wellness" class="text-4xl md:text-5xl font-black text-white leading-[1.05]"
-            style="scroll-margin-top:20px;">Your path to<br><span class="text-gradient">mindfulness.</span></h2>
+            style="scroll-margin-top:20px;">Your path to <span class="text-gradient">mindfulness.</span></h2>
         </div>
-        <div class="md:max-w-xs">
-          <p class="text-white/40 text-sm leading-relaxed mb-5">Four ways to deepen your day read, breathe, journal, or
-            quiz. Five minutes is all it takes.</p>
-          <div class="flex items-center gap-6">
-            <span class="text-white font-black text-xl">100% FREE</span>
-            <span class="text-white font-black text-xl">NO ADS EVER</span>
-          </div>
+        <div class="md:max-w-sm">
+          <p class="text-white/60 text-xl md:text-2xl font-semibold leading-snug">Four ways to deepen your day — read, breathe, journal, or quiz. Five minutes is all it takes.</p>
         </div>
       </div>
 
@@ -1355,7 +1283,7 @@
           <!-- Screenshot on white bg -->
           <div class="m-3 mb-0 rounded-[16px] overflow-hidden shadow-lg flex-shrink-0 flex items-center justify-center"
             style="background:linear-gradient(135deg,#FF9500 0%,#f18227 60%,#e06010 100%);">
-            <img src="Read.png" alt="Read" class="object-contain object-center"
+            <img loading="lazy" src="Read.png" alt="Read" class="object-contain object-center"
               style="height:155px;width:auto;max-width:90%;padding:8px 0;">
           </div>
           <!-- Text -->
@@ -1374,7 +1302,7 @@
           <div class="glass-glare"></div>
           <div class="m-3 mb-0 rounded-[16px] overflow-hidden shadow-lg flex-shrink-0 flex items-center justify-center"
             style="background:linear-gradient(135deg,#FF9500 0%,#f18227 60%,#e06010 100%);">
-            <img src="Breath.png" alt="Breathe" class="object-contain object-center"
+            <img loading="lazy" src="Breath.png" alt="Breathe" class="object-contain object-center"
               style="height:155px;width:auto;max-width:90%;padding:8px 0;">
           </div>
           <div class="p-5 relative z-10">
@@ -1391,7 +1319,7 @@
           <div class="glass-glare"></div>
           <div class="m-3 mb-0 rounded-[16px] overflow-hidden shadow-lg flex-shrink-0 flex items-center justify-center"
             style="background:linear-gradient(135deg,#FF9500 0%,#f18227 60%,#e06010 100%);">
-            <img src="Journal.png" alt="Journal" class="object-contain object-center"
+            <img loading="lazy" src="Journal.png" alt="Journal" class="object-contain object-center"
               style="height:155px;width:auto;max-width:90%;padding:8px 0;">
           </div>
           <div class="p-5 relative z-10">
@@ -1409,7 +1337,7 @@
           <div class="glass-glare"></div>
           <div class="m-3 mb-0 rounded-[16px] overflow-hidden shadow-lg flex-shrink-0 flex items-center justify-center"
             style="background:linear-gradient(135deg,#FF9500 0%,#f18227 60%,#e06010 100%);">
-            <img src="Quiz.png" alt="Quiz" class="object-contain object-center"
+            <img loading="lazy" src="Quiz.png" alt="Quiz" class="object-contain object-center"
               style="height:155px;width:auto;max-width:90%;padding:8px 0;">
           </div>
           <div class="p-5 relative z-10">
@@ -1717,214 +1645,6 @@
 
 
 
-  <!-- ══════════════════════════════════════ -->
-
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- JOURNEY                      gs=4      -->
-  <!-- ══════════════════════════════════════ -->
-  <section id="journey" class="bg-cream py-24" style="display:none;">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <p class="text-saffron text-xs font-black tracking-[.15em] uppercase mb-4">The Full Journey</p>
-        <h2 class="text-3xl md:text-4xl font-black text-navy leading-tight">
-          18 chapters.&nbsp;
-          120 lessons.
-        </h2>
-        <p class="text-navy/45 text-base max-w-md mx-auto mt-4">Each chapter is a new yoga a path back to yourself.</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        <!-- Ch 1–3 unlocked (saffron tint) -->
-        <div
-          class="chapter-pill bg-saffron/8 border border-saffron/25 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-saffron text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 1</p>
-            <p class="text-navy font-bold text-sm">Arjuna's Dilemma</p>
-          </div>
-          <div class="text-right">
-            <p class="text-saffron font-black text-base">47</p>
-            <p class="text-navy/30 text-[10px]">verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill bg-saffron/8 border border-saffron/25 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-saffron text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 2</p>
-            <p class="text-navy font-bold text-sm">The Yoga of Knowledge</p>
-          </div>
-          <div class="text-right">
-            <p class="text-saffron font-black text-base">72</p>
-            <p class="text-navy/30 text-[10px]">verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill bg-saffron/8 border border-saffron/25 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-saffron text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 3</p>
-            <p class="text-navy font-bold text-sm">The Yoga of Action</p>
-          </div>
-          <div class="text-right">
-            <p class="text-saffron font-black text-base">43</p>
-            <p class="text-navy/30 text-[10px]">verses</p>
-          </div>
-        </div>
-        <!-- Ch 4–18 locked -->
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 4</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Wisdom</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">42 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 5</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Renunciation</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">29 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 6</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Meditation</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">47 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 7</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Realization</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">30 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 8</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of the Imperishable</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">28 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 9</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Royal Knowledge</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">34 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 10</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Divine Glories</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">42 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 11</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of the Universal Form</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">55 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 12</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Devotion</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">20 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 13</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of the Field</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">35 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 14</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of the Three Gunas</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">27 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 15</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of the Supreme Person</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">20 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 16</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Divine &amp; Demonic</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">24 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 17</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Threefold Faith</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">28 verses</p>
-          </div>
-        </div>
-        <div
-          class="chapter-pill opacity-55 bg-white border border-navy/8 rounded-2xl p-4 flex justify-between items-center">
-          <div>
-            <p class="text-navy/35 text-[10px] font-black tracking-wider uppercase mb-0.5">Chapter 18</p>
-            <p class="text-navy/60 font-bold text-sm">The Yoga of Liberation</p>
-          </div>
-          <div class="text-right"><span class="text-navy/20 text-lg">🔒</span>
-            <p class="text-navy/20 text-[10px]">78 verses</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
 
 
   <!-- ══════════════════════════════════════ -->
@@ -1936,19 +1656,53 @@
   <!-- ══════════════════════════════════════ -->
   <section id="download-cta" class="bg-saffron overflow-hidden" style="padding:80px 0;">
     <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
 
-      <!-- Top: icon + heading + store buttons -->
-      <div class="flex flex-col md:flex-row md:items-center gap-10 mb-14">
+        <!-- LEFT 50%: FAQ -->
+        <div id="faq" style="scroll-margin-top:20px;">
+          <h2 class="text-3xl md:text-4xl font-black text-white leading-none mb-2">Questions?</h2>
+          <p class="text-white/45 text-sm font-medium mb-8">Hover to expand</p>
+          <div class="flex flex-col gap-2">
 
-        <!-- Big icon -->
-        <div style="flex-shrink:0;">
-          <img src="icon3.jpeg" alt="Gita Streak" style="width:140px;height:140px;object-fit:cover;object-position:center;border-radius:32px;box-shadow:0 20px 60px rgba(0,0,0,0.25),0 2px 0 rgba(255,255,255,0.15) inset;">
+            <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
+                <span>Is it free?</span>
+                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Yes. Core lessons, streaks, Karma Coins, and Gopi are free forever. Always.</div></div>
+            </div>
+
+            <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
+                <span>Do I need to know Sanskrit?</span>
+                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Not at all. Every lesson is in plain English. If an 8-year-old can't understand it, we rewrite it.</div></div>
+            </div>
+
+            <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
+                <span>iOS or Android?</span>
+                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Both. Built with React Native — works beautifully on iPhone and Android.</div></div>
+            </div>
+
+            <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
+                <span>How long to finish all 120 lessons?</span>
+                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">At one lesson a day, about 4 months. The Gita rewards patience — there's no rush.</div></div>
+            </div>
+
+          </div>
         </div>
 
-        <!-- Heading + store buttons -->
-        <div>
-          <h2 class="text-4xl md:text-5xl font-black text-white leading-[1.05] mb-6">Download the app<br>for your daily<br>Sadhana.</h2>
-          <div class="flex flex-wrap items-center gap-3">
+        <!-- RIGHT 50%: Download CTA -->
+        <div class="flex flex-col justify-center" style="margin-top:100px;">
+          <h2 class="text-4xl md:text-5xl font-black text-white leading-[1.05] mb-8">Download the app<br>for your daily<br>Sadhana.</h2>
+          <div class="flex items-center gap-3">
             <a href="https://apps.apple.com/us/iphone/search?term=gita%20streak" target="_blank" rel="noopener"
               class="flex items-center gap-3 bg-white/15 border border-white/25 text-white px-5 py-3 rounded-2xl hover:bg-white/25 transition-colors">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -1959,60 +1713,11 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
               <div class="text-left"><p class="text-white/60 text-[10px] font-medium leading-none mb-0.5">Get it on</p><p class="font-bold text-sm leading-none">Google Play</p></div>
             </a>
+            <img loading="lazy" src="apple-touch-icon.png" alt="Gita Streak" style="width:104px;height:104px;object-fit:cover;object-position:center;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,0.22),0 2px 0 rgba(255,255,255,0.15) inset;flex-shrink:0;position:relative;top:-27px;left:150px;">
           </div>
         </div>
+
       </div>
-
-      <!-- Divider -->
-      <div style="border-top:1px solid rgba(255,255,255,.2);margin-bottom:40px;"></div>
-
-      <!-- Bottom: FAQ -->
-      <div id="faq" style="scroll-margin-top:20px;">
-
-        <!-- Header row -->
-        <div class="flex items-end justify-between mb-8">
-          <h2 class="text-3xl md:text-4xl font-black text-white leading-none">Questions?</h2>
-          <p class="text-white/45 text-sm font-medium">Hover to expand</p>
-        </div>
-
-        <!-- FAQ items — single column, full width -->
-        <div class="flex flex-col gap-2">
-
-          <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-            <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
-              <span>Is it free?</span>
-              <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Yes. Core lessons, streaks, Karma Coins, and Gopi are free forever. Always.</div></div>
-          </div>
-
-          <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-            <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
-              <span>Do I need to know Sanskrit?</span>
-              <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Not at all. Every lesson is in plain English. If an 8-year-old can't understand it, we rewrite it.</div></div>
-          </div>
-
-          <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-            <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
-              <span>iOS or Android?</span>
-              <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Both. Built with React Native — works beautifully on iPhone and Android.</div></div>
-          </div>
-
-          <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-            <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
-              <span>How long to finish all 120 lessons?</span>
-              <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">At one lesson a day, about 4 months. The Gita rewards patience — there's no rush.</div></div>
-          </div>
-
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -2020,34 +1725,74 @@
   <!-- ══════════════════════════════════════ -->
   <!-- MEET THE MAKER               gs=8      -->
   <!-- ══════════════════════════════════════ -->
-  <section id="maker" class="bg-cream py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-14 items-center">
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- MAKER                                       -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="maker" style="background:#070712;padding:130px 0 120px;position:relative;overflow:hidden;">
 
-        <!-- Avatar card -->
-        <div class="text-center">
-          <div class="w-52 h-64 brand-panel rounded-[32px] mx-auto flex flex-col items-center justify-center border border-saffron/15 shadow-lg overflow-hidden relative">
-            <div class="ring r1" style="width:130px;height:130px;right:-30px;top:-30px;"></div>
-            <div class="ring r2" style="width:200px;height:200px;left:-60px;bottom:-60px;"></div>
-            <div class="relative z-10 w-24 h-24 rounded-full bg-navy text-saffron flex items-center justify-center text-3xl font-black tracking-tight shadow-xl">J</div>
-            <p class="relative z-10 mt-4 text-navy font-black text-sm">Jeyanth</p>
-            <p class="relative z-10 text-navy/45 text-[10px] font-bold tracking-[.18em] uppercase mt-0.5">Founder · Engineer</p>
-          </div>
-          <div class="mt-5 inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 border border-navy/8">
-            <div class="w-4 h-4 rounded-full bg-navy flex items-center justify-center">
-              <div class="w-1.5 h-1.5 rounded-full bg-saffron"></div>
+    <!-- Moving 3D glow canvas -->
+    <canvas id="makerGlowCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+
+    <!-- Subtle dot grid -->
+    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:1;"></div>
+
+    <!-- Horizontal accent line -->
+    <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,149,0,.3) 30%,rgba(255,149,0,.3) 70%,transparent);z-index:1;"></div>
+
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;position:relative;z-index:3;">
+
+      <!-- Label -->
+      <p style="text-align:center;color:#FF9500;font-size:10.5px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;margin-bottom:72px;opacity:.85;">The Maker</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1.35fr;gap:80px;align-items:center;">
+
+        <!-- ── Photo column ── -->
+        <div style="display:flex;flex-direction:column;align-items:center;">
+
+          <!-- Photo with flowing gradient border -->
+          <div style="position:relative;width:210px;height:268px;">
+            <!-- 1px gradient border via padding trick -->
+            <div class="maker-border-ring" style="position:absolute;inset:0;border-radius:38px;padding:1.5px;background:conic-gradient(from var(--angle,0deg),#FF9500 0%,#F4D03F 25%,rgba(255,149,0,.15) 50%,#FF6A00 75%,#FF9500 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;"></div>
+            <!-- Photo -->
+            <div style="position:absolute;inset:1.5px;border-radius:37px;overflow:hidden;background:#0d0d1a;">
+              <img src="Mypic.png" alt="Jeyanth Kothari" style="width:100%;height:100%;object-fit:cover;object-position:center;">
             </div>
-            <span class="text-navy text-xs font-black">JeyStack</span>
+            <!-- Soft glow bloom behind -->
+            <div style="position:absolute;inset:-24px;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(255,149,0,.22),transparent 65%);animation:photoGlowPulse 4s ease-in-out infinite;"></div>
           </div>
+
+          <!-- Name & title -->
+          <div style="margin-top:28px;text-align:center;">
+            <p style="color:#fff;font-size:1.15rem;font-weight:900;letter-spacing:-.01em;margin-bottom:5px;">Jeyanth Kothari</p>
+            <p style="color:rgba(255,255,255,.32);font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;">Founder · Engineer</p>
+          </div>
+
         </div>
 
-        <!-- Story -->
+        <!-- ── Story column ── -->
         <div>
-          <p class="text-saffron text-xs font-black tracking-[.15em] uppercase mb-4">The Maker</p>
-          <h2 class="text-2xl md:text-3xl font-black text-navy mb-6 leading-tight">Hi, I'm Jeyanth.</h2>
-          <p class="text-navy/65 text-base leading-relaxed mb-5">I grew up with the Gita on the bookshelf admired but never really read. When I finally sat down with it as an adult, it changed how I think about work, stress and who I'm trying to become.</p>
-          <p class="text-navy/65 text-base leading-relaxed mb-5">The Gita changed how I think about work, pressure, and purpose. I wanted to build something that could do the same for anyone, anywhere. Completely free, no distractions, just the teaching.</p>
-          <p class="text-navy/65 text-base leading-relaxed">I built Gita Streak because the wisdom of the Bhagavad Gita deserves to be in everyone's hands. Not locked behind paywalls, not buried under ads, not watered down.</p>
+          <h2 style="color:#fff;font-size:clamp(2rem,4vw,2.75rem);font-weight:900;line-height:1.08;letter-spacing:-.02em;margin-bottom:28px;">Hi, I'm Jeyanth.</h2>
+          <p style="color:rgba(255,255,255,.5);font-size:15.5px;line-height:1.85;margin-bottom:20px;">I grew up with the Gita on the bookshelf — admired but never really read. When I finally sat down with it as an adult, it changed how I think about work, stress, and who I'm trying to become.</p>
+          <p style="color:rgba(255,255,255,.5);font-size:15.5px;line-height:1.85;margin-bottom:20px;">I wanted to build something that could do the same for anyone, anywhere. Completely free, no distractions — just the teaching.</p>
+          <p style="color:rgba(255,255,255,.5);font-size:15.5px;line-height:1.85;">The wisdom of the Bhagavad Gita deserves to be in everyone's hands. Not locked behind paywalls, not buried under ads, not watered down.</p>
+
+          <!-- Divider + stat row -->
+          <div style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.07);display:flex;gap:32px;">
+            <div>
+              <p style="color:#FF9500;font-size:1.6rem;font-weight:900;line-height:1;">120</p>
+              <p style="color:rgba(255,255,255,.35);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;">Lessons</p>
+            </div>
+            <div style="width:1px;background:rgba(255,255,255,.07);"></div>
+            <div>
+              <p style="color:#FF9500;font-size:1.6rem;font-weight:900;line-height:1;">18</p>
+              <p style="color:rgba(255,255,255,.35);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;">Chapters</p>
+            </div>
+            <div style="width:1px;background:rgba(255,255,255,.07);"></div>
+            <div>
+              <p style="color:#FF9500;font-size:1.6rem;font-weight:900;line-height:1;">$0</p>
+              <p style="color:rgba(255,255,255,.35);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;">To Download</p>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -2059,8 +1804,8 @@
   <!-- ══════════════════════════════════════ -->
   <!-- FOOTER                                 -->
   <!-- ══════════════════════════════════════ -->
-  <section id="marquee-section" class="py-6" style="background:#fff8f0;">
-    <div class="marquee">
+  <section id="marquee-section" style="background:#070712;padding:44px 0;position:relative;overflow:hidden;">
+    <div class="marquee" style="position:relative;z-index:2;">
       <div class="marquee-track">
         <span class="marquee-item">You have a right to action <span class="ref">2:47</span></span>
         <span class="marquee-item">The soul is never born nor dies <span class="ref">2:20</span></span>
@@ -2082,43 +1827,110 @@
     </div>
   </section>
 
-  <footer class="bg-navy border-t border-white/5 pt-16 pb-10">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
-        <div class="col-span-2 md:col-span-1">
-          <a href="#" class="flex items-center gap-2.5 mb-4">
-            <img src="icon3.jpeg" alt="Gita Streak" style="width:32px;height:32px;object-fit:cover;object-position:center;border-radius:8px;">
-            <span class="text-white font-black text-sm">Gita Streak</span>
+  <footer id="siteFooter" style="background:#0d0d1a;padding:72px 0 36px;position:relative;overflow:hidden;">
+    <!-- Ambient glow -->
+    <div style="position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:200px;background:radial-gradient(ellipse,rgba(255,149,0,.08),transparent 70%);pointer-events:none;"></div>
+    <!-- Cursor-reactive glow -->
+    <div id="footerGlow" style="position:absolute;inset:0;z-index:0;pointer-events:none;transition:background .08s ease;background:transparent;"></div>
+
+    <div class="max-w-6xl mx-auto px-6" style="position:relative;z-index:2;">
+
+      <!-- Top row: brand left, links right -->
+      <div class="flex flex-col md:flex-row justify-between gap-14 mb-16">
+
+        <!-- Brand -->
+        <div style="max-width:300px;">
+          <a href="#" class="flex items-center gap-3 mb-5">
+            <img loading="lazy" src="apple-touch-icon.png" alt="Gita Streak" style="width:42px;height:42px;object-fit:cover;object-position:center;border-radius:11px;">
+            <span class="text-white font-black text-lg tracking-tight">Gita Streak</span>
           </a>
+          <p style="color:rgba(255,255,255,.38);font-size:13px;line-height:1.7;">Ancient wisdom. Modern habits.<br>One verse at a time — free, forever.</p>
+          <!-- Mini store badges -->
+          <div class="flex items-center gap-3 mt-6">
+            <a href="https://apps.apple.com/us/iphone/search?term=gita%20streak" target="_blank" rel="noopener"
+              class="flex items-center gap-2 px-4 py-2 rounded-xl transition-colors hover:bg-white/10"
+              style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span style="color:rgba(255,255,255,.75);font-size:11px;font-weight:700;">App Store</span>
+            </a>
+            <a href="https://play.google.com/store/search?q=gita%20streak&c=apps&hl=en_US" target="_blank" rel="noopener"
+              class="flex items-center gap-2 px-4 py-2 rounded-xl transition-colors hover:bg-white/10"
+              style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
+              <span style="color:rgba(255,255,255,.75);font-size:11px;font-weight:700;">Google Play</span>
+            </a>
+          </div>
         </div>
-        <div>
-          <p class="text-white font-black text-sm mb-5">About</p>
-          <ul class="space-y-3 text-white/55 text-xs">
-            <li><a href="#features" class="hover:text-white/70 transition-colors">Features</a></li>
-            <li><a href="#journey-heading" class="hover:text-white/70 transition-colors">Journey</a></li>
-            <li><a href="#gopi" class="hover:text-white/70 transition-colors">Meet Gopi</a></li>
-            <li><a href="#faq" class="hover:text-white/70 transition-colors">FAQ</a></li>
-          </ul>
+
+        <!-- Link columns -->
+        <div class="flex gap-12 md:gap-16">
+          <div>
+            <p style="color:rgba(255,255,255,.25);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;">Product</p>
+            <ul style="display:flex;flex-direction:column;gap:12px;">
+              <li><a href="#wellness" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Features</a></li>
+              <li><a href="#journey-heading" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Journey</a></li>
+              <li><a href="#faq" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <p style="color:rgba(255,255,255,.25);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;">Company</p>
+            <ul style="display:flex;flex-direction:column;gap:12px;">
+              <li><a href="#maker" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">About</a></li>
+              <li><a href="support.html" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Help Center</a></li>
+              <li style="margin-top:4px;">
+                <div id="supportEntry" style="position:relative;display:inline-block;">
+                  <span id="supportLabel" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;cursor:default;transition:color .2s;">Support</span>
+                  <div id="supportPopover" style="position:absolute;left:0;top:calc(100% + 8px);display:flex;align-items:center;gap:8px;background:#1a1a2e;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px 12px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;transform:translateY(-4px);z-index:10;box-shadow:0 8px 24px rgba(0,0,0,.4);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,149,0,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+                    <span style="color:rgba(255,255,255,.8);font-size:12px;font-weight:600;">support@jeystack.com</span>
+                    <button id="copyEmail" onclick="(function(){
+                      navigator.clipboard.writeText('support@jeystack.com');
+                      var ic=document.querySelector('.copy-ic');
+                      var chk=document.querySelector('.check-ic');
+                      ic.style.display='none'; chk.style.display='block';
+                      setTimeout(function(){ ic.style.display='block'; chk.style.display='none'; },1600);
+                    })()" style="background:none;border:none;padding:2px;cursor:pointer;display:flex;align-items:center;color:rgba(255,255,255,.3);transition:color .15s;" onmouseenter="this.style.color='rgba(255,149,0,.9)'" onmouseleave="this.style.color='rgba(255,255,255,.3)'">
+                      <svg class="copy-ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                      <svg class="check-ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polyline points="20 6 9 17 4 12"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <script>
+                  (function(){
+                    var entry=document.getElementById('supportEntry');
+                    var pop=document.getElementById('supportPopover');
+                    var lbl=document.getElementById('supportLabel');
+                    entry.addEventListener('mouseenter',function(){
+                      pop.style.opacity='1'; pop.style.pointerEvents='auto'; pop.style.transform='translateY(0)';
+                      lbl.style.color='rgba(255,255,255,.9)';
+                    });
+                    entry.addEventListener('mouseleave',function(){
+                      pop.style.opacity='0'; pop.style.pointerEvents='none'; pop.style.transform='translateY(-4px)';
+                      lbl.style.color='rgba(255,255,255,.55)';
+                    });
+                  })();
+                </script>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p style="color:rgba(255,255,255,.25);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;">Legal</p>
+            <ul style="display:flex;flex-direction:column;gap:12px;">
+              <li><a href="privacy.html" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Privacy Policy</a></li>
+              <li><a href="terms.html" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Terms of Service</a></li>
+              <li><a href="delete-account.html" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Delete Account</a></li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <p class="text-white font-black text-sm mb-5">Company</p>
-          <ul class="space-y-3 text-white/55 text-xs">
-            <li><span class="hover:text-white/70 transition-colors cursor-pointer">JeyStack LLC</span></li>
-            <li><a href="/cdn-cgi/l/email-protection#076d667e747366757374736865726e6b6347606a666e6b2964686a"
-                class="hover:text-saffron transition-colors">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-white font-black text-sm mb-5">Legal</p>
-          <ul class="space-y-3 text-white/55 text-xs">
-            <li><span class="cursor-pointer hover:text-white/70 transition-colors">Privacy Policy</span></li>
-            <li><span class="cursor-pointer hover:text-white/70 transition-colors">Terms of Service</span></li>
-          </ul>
-        </div>
+
       </div>
-      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p class="text-white/65 text-xs">© 2026 JeyStack LLC. All rights reserved.</p>
+
+      <!-- Bottom bar -->
+      <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;">
+        <p style="color:rgba(255,255,255,.22);font-size:12px;font-weight:600;">© 2026 JeyStack LLC. All rights reserved.</p>
+        <p style="color:rgba(255,255,255,.12);font-size:11px;">Made with devotion.</p>
       </div>
+
     </div>
   </footer>
 
@@ -2279,20 +2091,16 @@
       size: 0.65, maxAlpha: 0.35,
     });
 
-    /* Parallax floating phone outlines on cursor move */
-    (function () {
-      const els = document.querySelectorAll('.feat-parallax');
-      if (!els.length) return;
-      window.addEventListener('mousemove', e => {
-        const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
-        const dx = (e.clientX - cx) / cx, dy = (e.clientY - cy) / cy;
-        els.forEach(el => {
-          const d = parseFloat(el.dataset.depth) || 0.3;
-          const ry = -22 + dx * 10 * d, rx = 8 - dy * 6 * d;
-          el.style.transform = `perspective(900px) rotateY(${ry}deg) rotateX(${rx}deg)`;
-        });
-      }, { passive: true });
-    })();
+    new Particles(document.getElementById('siteFooter'), {
+      color: '#FF9500', quantity: 160, ease: 20, staticity: 42,
+      size: 0.6, maxAlpha: 0.32,
+    });
+
+    new Particles(document.getElementById('marquee-section'), {
+      color: '#FFF8F0', quantity: 120, ease: 35, staticity: 60,
+      size: 0.5, maxAlpha: 0.22,
+    });
+
 
 
 
@@ -2314,6 +2122,26 @@
       });
       hero.addEventListener('mouseleave', () => {
         glow.style.background = 'radial-gradient(520px circle at 65% 50%,rgba(255,149,0,.28) 0%,rgba(255,180,80,.14) 40%,transparent 65%)';
+      });
+    })();
+
+    /* ── Footer cursor glow ─────────────────────────── */
+    (function () {
+      const footer = document.getElementById('siteFooter');
+      const glow = document.getElementById('footerGlow');
+      if (!footer || !glow) return;
+      let raf = 0;
+      footer.addEventListener('mousemove', e => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const r = footer.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+          const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+          glow.style.background = `radial-gradient(380px circle at ${x}% ${y}%,rgba(255,149,0,.18) 0%,rgba(255,160,60,.08) 45%,transparent 70%)`;
+        });
+      });
+      footer.addEventListener('mouseleave', () => {
+        glow.style.background = 'transparent';
       });
     })();
 
@@ -2386,57 +2214,70 @@
     })();
 
     /* ════════════════════════════════════════════════════
-       HERO DEVICE HOVER OSCILLATION
+       HERO DEVICE CONTINUOUS OSCILLATION
+       Runs always; pauses (freezes) while hovered.
     ════════════════════════════════════════════════════ */
     (function () {
       const d4 = document.getElementById('heroDevice4');
       const d3 = document.getElementById('heroDevice3');
       if (!d4 || !d3) return;
 
-      // One full in-and-out cycle every 10 s
-      const FREQ = (2 * Math.PI) / 10000;
+      const FREQ = (2 * Math.PI) / 30000; // one full cycle every 30 s
+      let baseD4, baseD3;
+      let pausedD4 = false, pausedD3 = false;
+      let offsetD4 = 0, offsetD3 = 0;   // accumulated paused time
+      let pauseStartD4 = 0, pauseStartD3 = 0;
+      let startTime = null;
 
-      function oscillate(el, flagKey, getBase, apply) {
-        let raf, t0, base;
+      function tick(now) {
+        if (!startTime) startTime = now;
 
-        el.addEventListener('mouseenter', () => {
-          window[flagKey] = true;
-          base = getBase(el);
-          t0 = performance.now();
-          el.style.transition = 'none';
+        if (!pausedD4) {
+          const t = now - startTime - offsetD4;
+          const wave = (1 - Math.cos(t * FREQ)) / 2;
+          d4.style.left = (baseD4 + wave * 10) + '%';
+        }
+        if (!pausedD3) {
+          const t = now - startTime - offsetD3;
+          const wave = (1 - Math.cos(t * FREQ)) / 2;
+          d3.style.right = (baseD3 + wave * 80) + 'px';
+        }
 
-          function tick(now) {
-            // (1 - cos) / 2 → smooth 0→1→0 wave
-            const wave = (1 - Math.cos((now - t0) * FREQ)) / 2;
-            apply(el, base, wave);
-            raf = requestAnimationFrame(tick);
-          }
-          raf = requestAnimationFrame(tick);
-        });
-
-        el.addEventListener('mouseleave', () => {
-          cancelAnimationFrame(raf);
-          window[flagKey] = false;
-          // Ease back to base
-          el.style.transition = 'left 0.8s cubic-bezier(0.16,1,0.3,1), right 0.8s cubic-bezier(0.16,1,0.3,1)';
-          apply(el, base, 0);
-          setTimeout(() => { el.style.transition = 'left .05s linear, right .05s linear'; }, 850);
-        });
+        requestAnimationFrame(tick);
       }
 
-      // Device 4 — slides right (inward) by up to 10%
-      oscillate(
-        d4, '_hoverD4',
-        el => parseFloat(el.style.left) || 0,
-        (el, base, w) => { el.style.left = (base + w * 10) + '%'; }
-      );
+      function start() {
+        // Capture base positions from wherever scroll left them
+        baseD4 = parseFloat(d4.style.left) || 0;
+        baseD3 = parseFloat(d3.style.right) || -217;
+        d4.style.transition = 'none';
+        d3.style.transition = 'none';
+        // Tell scroll handler to stand down
+        window._hoverD4 = true;
+        window._hoverD3 = true;
+        requestAnimationFrame(tick);
+      }
 
-      // Device 3 — slides left (inward) by up to 80px
-      oscillate(
-        d3, '_hoverD3',
-        el => parseFloat(el.style.right) || -217,
-        (el, base, w) => { el.style.right = (base + w * 80) + 'px'; }
-      );
+      // Start after entrance animation finishes (~4.3 s)
+      setTimeout(start, 4300);
+
+      // Hover — pause by accumulating offset so resume is seamless
+      d4.addEventListener('mouseenter', () => {
+        pausedD4 = true;
+        pauseStartD4 = performance.now();
+      });
+      d4.addEventListener('mouseleave', () => {
+        offsetD4 += performance.now() - pauseStartD4;
+        pausedD4 = false;
+      });
+      d3.addEventListener('mouseenter', () => {
+        pausedD3 = true;
+        pauseStartD3 = performance.now();
+      });
+      d3.addEventListener('mouseleave', () => {
+        offsetD3 += performance.now() - pauseStartD3;
+        pausedD3 = false;
+      });
     })();
 
     /* ════════════════════════════════════════════════════
@@ -2513,18 +2354,47 @@
       }, { threshold: 0.10 });
       fadeEls.forEach(el => fadeObserver.observe(el));
 
-      // Nav: hide entirely on scroll
+      // Unified scroll handler — one listener for all scroll-driven effects
       const navInner = nav.querySelector('div');
-      let navScrolled = false;
-      window.addEventListener('scroll', () => {
-        const shouldShrink = window.pageYOffset > 40;
-        if (shouldShrink === navScrolled) return;
-        navScrolled = shouldShrink;
-        nav.classList.toggle('scrolled', shouldShrink);
-        nav.classList.toggle('hidden-on-scroll', shouldShrink);
-        navInner.style.paddingTop = shouldShrink ? '10px' : '22px';
-        navInner.style.paddingBottom = shouldShrink ? '10px' : '22px';
-      }, { passive: true });
+      const hint = document.getElementById('scrollHint');
+      const progress = document.getElementById('scrollProgress');
+      const phoneWrap = document.querySelector('#hero .tilt-wrap');
+      let navScrolled = false, rafTicking = false;
+
+      function onScroll() {
+        const y = window.scrollY;
+
+        // Nav shrink/hide
+        const shrink = y > 40;
+        if (shrink !== navScrolled) {
+          navScrolled = shrink;
+          nav.classList.toggle('scrolled', shrink);
+          nav.classList.toggle('hidden-on-scroll', shrink);
+          navInner.style.paddingTop = shrink ? '10px' : '22px';
+          navInner.style.paddingBottom = shrink ? '10px' : '22px';
+        }
+
+        // Scroll hint fade
+        if (hint) hint.style.opacity = y > 40 ? '0' : '.45';
+
+        // Scroll progress bar
+        if (progress) {
+          const d = document.documentElement;
+          const total = d.scrollHeight - d.clientHeight;
+          progress.style.width = (total > 0 ? (y / total) * 100 : 0) + '%';
+        }
+
+        // Hero phone parallax (throttled via rAF)
+        if (phoneWrap && !rafTicking) {
+          rafTicking = true;
+          requestAnimationFrame(() => {
+            phoneWrap.style.transform = `translateY(${Math.max(-60, y * -0.08).toFixed(1)}px)`;
+            rafTicking = false;
+          });
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
 
       // FAQ accordion — hover to open, auto-close on leave
       document.querySelectorAll('.faq-item').forEach(item => {
@@ -2548,15 +2418,6 @@
           c.style.transform = 'rotate(0deg)';
         });
       });
-
-      // Hide scroll hint on scroll
-      (function () {
-        const hint = document.getElementById('scrollHint');
-        if (!hint) return;
-        window.addEventListener('scroll', () => {
-          hint.style.opacity = window.scrollY > 40 ? '0' : '.45';
-        }, { passive: true });
-      })();
 
       // Smooth scroll for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -2768,16 +2629,7 @@
       }, { threshold: 0.6 });
       document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
 
-      /* ── 6. Scroll progress bar (top) ──────────────────── */
-      const progress = document.getElementById('scrollProgress');
-      function updateProgress() {
-        const h = document.documentElement;
-        const total = h.scrollHeight - h.clientHeight;
-        const p = total > 0 ? (h.scrollTop / total) * 100 : 0;
-        progress.style.width = p + '%';
-      }
-      window.addEventListener('scroll', updateProgress, { passive: true });
-      updateProgress();
+      /* ── 6. Scroll progress bar — handled in unified onScroll ── */
 
       /* ── 7. 3D phone tilt (parent-perspective) ─────────── */
       document.querySelectorAll('[data-tilt]').forEach(el => {
@@ -2825,55 +2677,102 @@
         }, 3800);
       })();
 
-      /* ── 9. Hero phone subtle scroll-parallax ──────────── */
-      (function () {
-        const phoneWrap = document.querySelector('#hero .tilt-wrap');
-        if (!phoneWrap) return;
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-          if (ticking) return;
-          ticking = true;
-          requestAnimationFrame(() => {
-            const y = window.scrollY;
-            // Gentle vertical drift only — no fade.  Capping at 60px keeps it
-            // present even when the user scrolls past the hero, so the strip
-            // below feels visually connected rather than floating in a gap.
-            const drift = Math.max(-60, y * -0.08);
-            phoneWrap.style.transform = `translateY(${drift.toFixed(1)}px)`;
-            ticking = false;
-          });
-        }, { passive: true });
-      })();
-
-      /* Auto-snap to marquee when user scrolls past the features section */
-      (function () {
-        const featuresSection = document.getElementById('features');
-        const marquee = document.getElementById('marquee-section');
-        if (!featuresSection || !marquee) return;
-
-        let snapped = false;
-        let scrolling = false;
-
-        window.addEventListener('scroll', () => {
-          if (scrolling) return;
-          const featBottom = featuresSection.getBoundingClientRect().bottom;
-          if (!snapped && featBottom < 80) {
-            snapped = true;
-            scrolling = true;
-            marquee.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setTimeout(() => { scrolling = false; }, 1000);
-          }
-          if (featBottom > 200) snapped = false;
-        }, { passive: true });
-      })();
+      /* ── 9. Hero phone parallax — handled in unified onScroll ── */
 
     });
+
+    /* ════════════════════════════════════════════════
+       MAKER SECTION — 3D volumetric glow canvas
+       Three light sources drift on overlapping Lissajous
+       paths so the motion looks organic and never repeats.
+    ════════════════════════════════════════════════ */
+    (function () {
+      const canvas = document.getElementById('makerGlowCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      function resize() {
+        const r = canvas.parentElement.getBoundingClientRect();
+        canvas.width  = r.width  * devicePixelRatio;
+        canvas.height = r.height * devicePixelRatio;
+        ctx.scale(devicePixelRatio, devicePixelRatio);
+      }
+      resize();
+      window.addEventListener('resize', () => { ctx.resetTransform(); resize(); });
+
+      /* Each orb drifts using two independent sine waves per axis —
+         different irrational-ratio frequencies ensure it never quite repeats */
+      const orbs = [
+        {
+          /* large warm-orange core */
+          r: 420, alpha: 0.18,
+          cx: 0.45, cy: 0.5,          // normalised centre
+          ax: 0.28, ay: 0.22,          // amplitude (fraction of w/h)
+          fx1: 0.00017, fy1: 0.00013, // primary sine freq (rad/ms)
+          fx2: 0.000073, fy2: 0.000091,
+          px1: 0, py1: 1.1, px2: 2.4, py2: 0.7,
+          color: [255, 120, 0],
+        },
+        {
+          /* mid amber, offset phase */
+          r: 300, alpha: 0.13,
+          cx: 0.55, cy: 0.45,
+          ax: 0.32, ay: 0.28,
+          fx1: 0.000131, fy1: 0.000097,
+          fx2: 0.000061, fy2: 0.000083,
+          px1: 1.6, py1: 0.3, px2: 3.1, py2: 1.9,
+          color: [255, 170, 20],
+        },
+        {
+          /* small deep-red accent */
+          r: 220, alpha: 0.11,
+          cx: 0.5, cy: 0.55,
+          ax: 0.38, ay: 0.32,
+          fx1: 0.000109, fy1: 0.000141,
+          fx2: 0.000079, fy2: 0.000057,
+          px1: 0.8, py1: 2.2, px2: 1.4, py2: 3.5,
+          color: [220, 80, 0],
+        },
+      ];
+
+      function drawOrb(orb, W, H, t) {
+        const x = W * orb.cx
+          + W * orb.ax * Math.sin(orb.fx1 * t + orb.px1)
+          + W * orb.ax * 0.4 * Math.sin(orb.fx2 * t + orb.px2);
+        const y = H * orb.cy
+          + H * orb.ay * Math.sin(orb.fy1 * t + orb.py1)
+          + H * orb.ay * 0.4 * Math.sin(orb.fy2 * t + orb.py2);
+
+        /* subtle size breathe */
+        const scale = 1 + 0.12 * Math.sin(0.000053 * t + orb.px1);
+        const r = orb.r * scale;
+
+        const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+        const [R, G, B] = orb.color;
+        g.addColorStop(0,   `rgba(${R},${G},${B},${orb.alpha})`);
+        g.addColorStop(0.35,`rgba(${R},${G},${B},${orb.alpha * 0.55})`);
+        g.addColorStop(0.7, `rgba(${R},${G},${B},${orb.alpha * 0.18})`);
+        g.addColorStop(1,   `rgba(${R},${G},${B},0)`);
+
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.ellipse(x, y, r, r * 0.72, 0, 0, Math.PI * 2); // slightly squashed = more 3-D
+        ctx.fill();
+      }
+
+      function tick(t) {
+        const W = canvas.width  / devicePixelRatio;
+        const H = canvas.height / devicePixelRatio;
+        ctx.clearRect(0, 0, W, H);
+        ctx.globalCompositeOperation = 'screen';
+        for (const orb of orbs) drawOrb(orb, W, H, t);
+        ctx.globalCompositeOperation = 'source-over';
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    })();
   </script>
 
-  <!-- ══════════════════════════════════════ -->
-  <!-- SECTION NUMBERS — temp editing aid     -->
-  <!-- Delete this entire <script> to remove  -->
-  <!-- ══════════════════════════════════════ -->
 
 </body>
 

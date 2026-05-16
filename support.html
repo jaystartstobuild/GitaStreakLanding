@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Gita Streak</title>
+  <meta name="description" content="Get help with Gita Streak. Contact support, browse FAQs, and find answers to common questions.">
+  <link rel="canonical" href="https://gitastreak.com/support.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gitastreak.com/support.html">
+  <meta property="og:title" content="Support — Gita Streak">
+  <meta property="og:description" content="Get help with Gita Streak. Contact support, browse FAQs, and find answers to common questions.">
+  <meta property="og:image" content="https://gitastreak.com/android-chrome-512x512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://gitastreak.com/support.html">
+  <meta name="twitter:title" content="Support — Gita Streak">
+  <meta name="twitter:description" content="Get help with Gita Streak. Contact support, browse FAQs, and find answers to common questions.">
+  <meta name="twitter:image" content="https://gitastreak.com/android-chrome-512x512.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { saffron: '#FF9500', navy: '#1A1A2E', gold: '#F4D03F', cream: '#FFF8F0' },
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Accordion answer transition */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-answer.open {
+      max-height: 400px;
+    }
+
+    /* Nav scroll state */
+    nav.scrolled {
+      background-color: #ffffff;
+      box-shadow: 0 1px 12px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+
+<body class="bg-cream font-sans antialiased">
+
+  <!-- Fixed Nav -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 no-underline">
+        <img src="apple-touch-icon.png" alt="Gita Streak icon" class="w-9 h-9 rounded-[9px] object-cover">
+        <span class="text-navy font-black text-[17px] tracking-tight">Gita Streak</span>
+      </a>
+      <!-- Back link -->
+      <a href="index.html" class="text-slate-500 text-sm font-semibold hover:text-navy transition-colors">
+        &larr; Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-[120px] pb-20">
+
+    <!-- Hero -->
+    <div class="mb-12">
+      <h1 class="text-navy font-black text-4xl leading-tight mb-3">We're here to help</h1>
+      <p class="text-slate-500 text-lg">Questions about Gita Streak? We've got you.</p>
+    </div>
+
+    <!-- Contact Card -->
+    <div class="rounded-2xl border border-saffron/20 bg-saffron/5 p-8 mb-14">
+      <div class="flex items-start gap-5">
+        <!-- Mail Icon -->
+        <div class="flex-shrink-0 mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-saffron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-slate-500 text-sm font-medium mb-1">Email us at</p>
+          <p class="text-navy font-black text-lg mb-1">support@jeystack.com</p>
+          <p class="text-slate-400 text-sm mb-5">We typically respond within 24–48 hours.</p>
+          <!-- Copy Button -->
+          <button
+            id="copyBtn"
+            onclick="copyEmail()"
+            class="inline-flex items-center gap-2 bg-saffron text-white font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-orange-500 transition-colors focus:outline-none focus:ring-2 focus:ring-saffron focus:ring-offset-2"
+          >
+            <!-- Clipboard icon (default) -->
+            <span id="copyIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-4 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </span>
+            <!-- Checkmark icon (shown after copy) -->
+            <span id="checkIcon" class="hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+            <span id="copyLabel">Tap to copy email</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div>
+      <h2 class="text-navy font-black text-xl mb-3 mt-10 border-l-4 border-saffron pl-4">Frequently Asked Questions</h2>
+      <p class="text-slate-600 text-[15px] leading-relaxed mb-8">Tap any question to see the answer.</p>
+
+      <div class="space-y-3" id="faqList">
+
+        <!-- FAQ 1 -->
+        <div class="rounded-xl border border-slate-200 bg-white overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group"
+            aria-expanded="false"
+          >
+            <span class="text-navy font-semibold text-[15px] pr-4">How do I reset my streak?</span>
+            <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border-2 border-saffron text-saffron flex items-center justify-center font-black text-sm transition-transform">+</span>
+          </button>
+          <div class="faq-answer px-6">
+            <p class="text-slate-500 text-[15px] leading-relaxed pb-5">
+              Streaks reset automatically if a daily lesson is missed. If you believe your streak was lost due to a technical issue, please email us at <a href="mailto:support@jeystack.com" class="text-saffron font-semibold hover:underline">support@jeystack.com</a> with the email address associated with your account. We'll look into it and do our best to make it right.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="rounded-xl border border-slate-200 bg-white overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group"
+            aria-expanded="false"
+          >
+            <span class="text-navy font-semibold text-[15px] pr-4">What are Karma Coins?</span>
+            <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border-2 border-saffron text-saffron flex items-center justify-center font-black text-sm transition-transform">+</span>
+          </button>
+          <div class="faq-answer px-6">
+            <p class="text-slate-500 text-[15px] leading-relaxed pb-5">
+              Karma Coins are Gita Streak's in-app virtual currency. You earn them by completing daily lessons, maintaining streaks, and hitting milestones. They can be used to unlock bonus content and cosmetic features within the app. Karma Coins have no real-world monetary value and cannot be exchanged for cash or redeemed outside of Gita Streak.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="rounded-xl border border-slate-200 bg-white overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group"
+            aria-expanded="false"
+          >
+            <span class="text-navy font-semibold text-[15px] pr-4">Can I transfer my progress to a new device?</span>
+            <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border-2 border-saffron text-saffron flex items-center justify-center font-black text-sm transition-transform">+</span>
+          </button>
+          <div class="faq-answer px-6">
+            <p class="text-slate-500 text-[15px] leading-relaxed pb-5">
+              Yes! Your progress is tied to your account, not your device. Simply sign in with the same Apple ID or Google account on your new device and everything — your lessons, streaks, and Karma Coins — will be there waiting for you. Make sure you're using the same login method you used when you first set up the app.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="rounded-xl border border-slate-200 bg-white overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group"
+            aria-expanded="false"
+          >
+            <span class="text-navy font-semibold text-[15px] pr-4">How do I delete my account?</span>
+            <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border-2 border-saffron text-saffron flex items-center justify-center font-black text-sm transition-transform">+</span>
+          </button>
+          <div class="faq-answer px-6">
+            <p class="text-slate-500 text-[15px] leading-relaxed pb-5">
+              You can request account deletion at any time. Deleting your account will permanently remove all your data, progress, and Karma Coins. To get started, visit our <a href="delete-account.html" class="text-saffron font-semibold hover:underline">Account Deletion page</a> for step-by-step instructions. We'll process your request within 30 days.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Additional Links -->
+    <div class="mt-14 pt-8 border-t border-slate-200">
+      <h2 class="text-navy font-black text-xl mb-3 mt-0 border-l-4 border-saffron pl-4">Legal</h2>
+      <p class="text-slate-600 text-[15px] leading-relaxed mb-4">For information on how we handle your data and our terms of use, please review the following:</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="privacy.html" class="inline-flex items-center gap-1.5 text-saffron font-semibold text-sm hover:underline">
+          Privacy Policy
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        </a>
+        <a href="terms.html" class="inline-flex items-center gap-1.5 text-saffron font-semibold text-sm hover:underline">
+          Terms of Service
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-navy py-8 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-white/40 text-sm mb-3">&copy; 2026 JeyStack LLC. All rights reserved.</p>
+      <div class="flex flex-wrap justify-center gap-5">
+        <a href="privacy.html" class="text-white/30 text-sm hover:text-white/60 transition-colors">Privacy Policy</a>
+        <a href="terms.html" class="text-white/30 text-sm hover:text-white/60 transition-colors">Terms of Service</a>
+        <a href="support.html" class="text-white/30 text-sm hover:text-white/60 transition-colors">Support</a>
+        <a href="delete-account.html" class="text-white/30 text-sm hover:text-white/60 transition-colors">Delete Account</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Copy email to clipboard
+    function copyEmail() {
+      const email = 'support@jeystack.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const label = document.getElementById('copyLabel');
+        const copyIcon = document.getElementById('copyIcon');
+        const checkIcon = document.getElementById('checkIcon');
+
+        label.textContent = 'Copied!';
+        copyIcon.classList.add('hidden');
+        checkIcon.classList.remove('hidden');
+
+        setTimeout(() => {
+          label.textContent = 'Tap to copy email';
+          copyIcon.classList.remove('hidden');
+          checkIcon.classList.add('hidden');
+        }, 1800);
+      }).catch(() => {
+        // Fallback for browsers that don't support clipboard API
+        const label = document.getElementById('copyLabel');
+        label.textContent = 'support@jeystack.com';
+        setTimeout(() => { label.textContent = 'Tap to copy email'; }, 2500);
+      });
+    }
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('.faq-icon');
+        const isOpen = answer.classList.contains('open');
+
+        // Close all others
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-icon').forEach(i => {
+          i.textContent = '+';
+          i.classList.remove('rotate-45');
+        });
+        document.querySelectorAll('.faq-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+        // Toggle current
+        if (!isOpen) {
+          answer.classList.add('open');
+          icon.textContent = '−';
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
