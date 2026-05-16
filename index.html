@@ -17,14 +17,16 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gitastreak.com/">
   <meta property="og:title" content="Gita Streak: Ancient wisdom. Modern habits.">
-  <meta property="og:description" content="Master the Bhagavad Gita in 5 minutes a day. 120 lessons, daily streaks, and Gopi your friendly guide.">
+  <meta property="og:description"
+    content="Master the Bhagavad Gita in 5 minutes a day. 120 lessons, daily streaks, and Gopi your friendly guide.">
   <meta property="og:image" content="https://gitastreak.com/android-chrome-512x512.png">
   <meta property="og:image:width" content="512">
   <meta property="og:image:height" content="512">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://gitastreak.com/">
   <meta name="twitter:title" content="Gita Streak: Ancient wisdom. Modern habits.">
-  <meta name="twitter:description" content="Master the Bhagavad Gita in 5 minutes a day. 120 lessons, daily streaks, and Gopi your friendly guide.">
+  <meta name="twitter:description"
+    content="Master the Bhagavad Gita in 5 minutes a day. 120 lessons, daily streaks, and Gopi your friendly guide.">
   <meta name="twitter:image" content="https://gitastreak.com/android-chrome-512x512.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +34,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet"></noscript>
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap"
+      rel="stylesheet">
+  </noscript>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -245,8 +251,17 @@
     }
 
     @keyframes heroScrollDot {
-      0%, 100% { transform: translateY(0); opacity: 1; }
-      50% { transform: translateY(8px); opacity: .4; }
+
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(8px);
+        opacity: .4;
+      }
     }
 
     @keyframes flamePulse {
@@ -561,7 +576,7 @@
       height: 8px;
       border-radius: 50%;
       background: #FF9500;
-      box-shadow: 0 0 8px rgba(255,149,0,.6);
+      box-shadow: 0 0 8px rgba(255, 149, 0, .6);
     }
 
     .marquee-item .ref {
@@ -805,51 +820,129 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* ── Maker section ── */
     @keyframes makerOrb1 {
-      0%,100% { transform: translate(0,0) scale(1); opacity:.7; }
-      50%      { transform: translate(50px,30px) scale(1.15); opacity:1; }
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: .7;
+      }
+
+      50% {
+        transform: translate(50px, 30px) scale(1.15);
+        opacity: 1;
+      }
     }
+
     @keyframes makerOrb2 {
-      0%,100% { transform: translate(0,0) scale(1); opacity:.5; }
-      50%      { transform: translate(-40px,-25px) scale(1.1); opacity:.8; }
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: .5;
+      }
+
+      50% {
+        transform: translate(-40px, -25px) scale(1.1);
+        opacity: .8;
+      }
     }
+
     @keyframes makerOrb3 {
-      0%,100% { transform: translate(0,0) scale(1); opacity:.4; }
-      50%      { transform: translate(20px,-40px) scale(1.08); opacity:.7; }
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: .4;
+      }
+
+      50% {
+        transform: translate(20px, -40px) scale(1.08);
+        opacity: .7;
+      }
     }
+
     @keyframes photoGlowPulse {
-      0%,100% { opacity:.55; transform:scale(1); }
-      50%      { opacity:1; transform:scale(1.06); }
+
+      0%,
+      100% {
+        opacity: .55;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.06);
+      }
     }
+
     @property --angle {
       syntax: '<angle>';
       initial-value: 0deg;
       inherits: false;
     }
+
     @keyframes borderRing {
-      to { --angle: 360deg; }
+      to {
+        --angle: 360deg;
+      }
     }
+
     .maker-border-ring {
       animation: borderRing 4s linear infinite;
     }
+
     @keyframes chipFloat {
-      0%,100% { transform:translateY(0); }
-      50%      { transform:translateY(-4px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-4px);
+      }
     }
+
     @keyframes makerFadeUp {
-      from { opacity:0; transform:translateY(28px); }
-      to   { opacity:1; transform:translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .maker-chip { animation: chipFloat 3.5s ease-in-out infinite; }
-    .maker-chip:nth-child(2) { animation-delay:.6s; }
-    .maker-chip:nth-child(3) { animation-delay:1.2s; }
+
+    .maker-chip {
+      animation: chipFloat 3.5s ease-in-out infinite;
+    }
+
+    .maker-chip:nth-child(2) {
+      animation-delay: .6s;
+    }
+
+    .maker-chip:nth-child(3) {
+      animation-delay: 1.2s;
+    }
+
     @media (max-width:767px) {
-      #maker > div > div { grid-template-columns:1fr !important; gap:48px !important; }
-      #maker > div > div > div:first-child { align-items:center; }
+      #maker>div>div {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important;
+      }
+
+      #maker>div>div>div:first-child {
+        align-items: center;
+      }
     }
 
     .brand-panel .glyph {
@@ -1109,6 +1202,209 @@
       transform: scale(0.85);
       transform-origin: center;
     }
+
+    /* ════════════════════════════════════
+     MOBILE  (≤ 767 px)
+  ════════════════════════════════════ */
+    @media (max-width: 767px) {
+
+      /* ── Prevent horizontal scroll from off-screen slide animations ── */
+      html, body { overflow-x: hidden; }
+
+      /* ── Hide custom cursor on touch devices ── */
+      #cursor-ring,
+      #cursor-dot {
+        display: none !important;
+      }
+
+
+
+      /* ── NAV ── */
+      #mainNav>div {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      /* ── HERO ── */
+      #hero {
+        height: 100svh !important;
+        min-height: 0 !important;
+      }
+
+      #heroLayout {
+        flex-direction: column !important;
+        position: absolute !important;
+        inset: 0 !important;
+        padding: 88px 24px 0 !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: center !important;
+        gap: 0 !important;
+        height: 100% !important;
+      }
+
+      #heroText {
+        width: 100% !important;
+        padding-right: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+
+      #heroText h1 {
+        font-size: 2.1rem !important;
+        margin-bottom: 14px !important;
+      }
+
+      /* Subtext — compact 2-line version on mobile */
+      #heroSubtext {
+        display: block !important;
+        font-size: 0.82rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 14px !important;
+        opacity: 0.5 !important;
+      }
+
+      /* Download buttons — tighter on mobile */
+      #heroText .flex.items-center.gap-3 {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        margin-bottom: 18px !important;
+      }
+
+      /* 100% Free | No Ads Ever — bigger on mobile */
+      #heroFreeBar {
+        gap: 12px !important;
+      }
+
+      #heroFreeBar span {
+        font-size: 1.35rem !important;
+      }
+
+      #heroFreeBar span[style*="opacity:.2"] {
+        font-size: 1.4rem !important;
+      }
+
+      #heroDevices {
+        display: none !important;
+      }
+
+      #scrollHint {
+        display: none !important;
+      }
+
+      #heroMobileDevice {
+        display: block !important;
+      }
+
+      #heroMobileGlow {
+        display: block !important;
+      }
+
+      #heroMobileLeft {
+        display: block !important;
+      }
+
+      #heroMobileRight {
+        display: block !important;
+      }
+
+      /* ── PRACTICE ── */
+      #practice {
+        padding-bottom: 80px !important;
+      }
+
+      #practice .grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      /* ── FEATURES ── */
+      #features {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+      }
+
+      /* ── JOURNEY: kill sticky animation, show text only ── */
+      #journeyScrollStage {
+        height: auto !important;
+      }
+
+      #journeySticky {
+        position: relative !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+
+      #journeyDeviceWrap {
+        display: none !important;
+      }
+
+      /* The left-to-right gradient overlay */
+      #journeyScrollStage>div>div[style*="gradient(100deg"] {
+        display: none !important;
+      }
+
+      #journeyTextOverlay {
+        position: relative !important;
+        inset: auto !important;
+        padding: 64px 24px 72px !important;
+        height: auto !important;
+      }
+
+      /* ── DOWNLOAD CTA ── */
+      #download-cta {
+        padding: 60px 0 !important;
+      }
+
+      #downloadAppIcon {
+        display: none !important;
+      }
+
+      #downloadBtnsRow {
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+      }
+
+      /* ── FAQ questions ── */
+      .faq-question {
+        font-size: 1rem !important;
+      }
+
+      /* ── MAKER ── */
+      #maker {
+        padding: 72px 0 72px !important;
+      }
+
+      #makerGrid {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important;
+      }
+
+      /* ── MARQUEE ── */
+      .marquee-item {
+        font-size: 20px !important;
+        gap: 10px !important;
+      }
+
+      /* ── FOOTER ── */
+      #siteFooter {
+        padding: 56px 0 32px !important;
+      }
+
+      #siteFooter .flex.gap-12 {
+        gap: 32px !important;
+        flex-wrap: wrap;
+      }
+
+      /* Scroll-reveal system takes over on mobile — disable class-driven transitions */
+      .card-reveal,
+      .card-reveal.visible,
+      .fade-up,
+      .fade-up.visible {
+        transition: none;
+      }
+    }
   </style>
 </head>
 
@@ -1122,23 +1418,29 @@
   <!-- NAV                                    -->
   <!-- ══════════════════════════════════════ -->
   <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50">
-    <div class="pr-8 md:pr-14 flex items-center justify-between" style="padding-top:10px;padding-bottom:10px;padding-left:24px;">
+    <div class="pr-8 md:pr-14 flex items-center justify-between"
+      style="padding-top:10px;padding-bottom:10px;padding-left:24px;">
       <!-- Left: logo + name -->
       <a href="#" class="flex items-center gap-2">
-        <img loading="lazy" src="apple-touch-icon.png" alt="Gita Streak" style="width:44px;height:44px;object-fit:cover;object-position:center;border-radius:11px;">
+        <img loading="lazy" src="apple-touch-icon.png" alt="Gita Streak"
+          style="width:44px;height:44px;object-fit:cover;object-position:center;border-radius:11px;">
         <span class="font-black tracking-tight" style="color:#1a1a2e;font-size:1.1rem;">Gita Streak</span>
       </a>
       <!-- Right: nav links + download -->
-      <div class="hidden md:flex items-center gap-7">
-        <ul class="flex items-center gap-7 text-sm font-semibold" style="color:#1a1a2e;">
+      <div class="flex items-center gap-3 md:gap-7">
+        <!-- Mobile: Features + Download only -->
+        <a href="#app-features-target" class="md:hidden text-xs font-semibold hover:text-saffron transition-colors"
+          style="color:#1a1a2e;">Features</a>
+        <!-- Desktop: full link list -->
+        <ul class="hidden md:flex items-center gap-7 text-sm font-semibold" style="color:#1a1a2e;">
           <li><a href="#wellness" class="hover:text-saffron transition-colors">Wellness</a></li>
           <li><a href="#app-features-target" class="hover:text-saffron transition-colors">App Features</a></li>
           <li><a href="#journey-heading" class="hover:text-saffron transition-colors">Journey</a></li>
           <li><a href="#faq" class="hover:text-saffron transition-colors">FAQ</a></li>
         </ul>
         <a href="#download-cta"
-          class="text-white text-xs font-black px-5 py-2.5 rounded-xl transition-all hover:-translate-y-0.5 hover:brightness-110"
-          style="background:linear-gradient(135deg,#ff9500 0%,#ff6a00 100%);box-shadow:0 0 18px rgba(255,149,0,0.55),0 2px 8px rgba(255,106,0,0.35);">
+          class="text-white font-black rounded-xl transition-all hover:-translate-y-0.5 hover:brightness-110"
+          style="background:linear-gradient(135deg,#ff9500 0%,#ff6a00 100%);box-shadow:0 0 18px rgba(255,149,0,0.55),0 2px 8px rgba(255,106,0,0.35);font-size:11px;padding:8px 14px;">
           Download
         </a>
       </div>
@@ -1149,35 +1451,44 @@
   <!-- ══════════════════════════════════════ -->
   <!-- HERO                          gs=0      -->
   <!-- ══════════════════════════════════════ -->
-  <section id="hero" style="position:relative;height:100vh;min-height:700px;overflow:hidden;background:linear-gradient(135deg,#fff8f0 0%,#ffffff 55%,#fff3e6 100%);">
+  <section id="hero"
+    style="position:relative;height:100vh;min-height:700px;overflow:hidden;background:linear-gradient(135deg,#fff8f0 0%,#ffffff 55%,#fff3e6 100%);">
 
     <!-- Grain texture overlay — warm beige -->
-    <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;filter:sepia(1) brightness(1.12) hue-rotate(5deg);" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;filter:sepia(1) brightness(1.12) hue-rotate(5deg);"
+      xmlns="http://www.w3.org/2000/svg">
       <filter id="heroGrain" x="0%" y="0%" width="100%" height="100%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" stitchTiles="stitch"/>
-        <feColorMatrix type="saturate" values="0"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
       </filter>
-      <rect width="100%" height="100%" filter="url(#heroGrain)" opacity="0.30"/>
+      <rect width="100%" height="100%" filter="url(#heroGrain)" opacity="0.30" />
     </svg>
 
     <!-- Cursor-reactive radial glow layer -->
-    <div id="heroCursorGlow" style="position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(520px circle at 65% 50%,rgba(255,149,0,.28) 0%,rgba(255,180,80,.14) 40%,transparent 65%);transition:background .06s ease;"></div>
+    <div id="heroCursorGlow"
+      style="position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(520px circle at 65% 50%,rgba(255,149,0,.28) 0%,rgba(255,180,80,.14) 40%,transparent 65%);transition:background .06s ease;">
+    </div>
 
     <!-- Warm edge vignette -->
-    <div style="position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 70% 80% at 78% 50%,transparent 30%,rgba(255,220,180,.50) 100%);"></div>
+    <div
+      style="position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 70% 80% at 78% 50%,transparent 30%,rgba(255,220,180,.50) 100%);">
+    </div>
 
     <!-- Content: text left, devices right -->
-    <div style="position:absolute;inset:0;z-index:10;display:flex;align-items:center;padding-top:80px;padding-left:80px;padding-right:0;gap:0;">
+    <div id="heroLayout"
+      style="position:absolute;inset:0;z-index:10;display:flex;align-items:center;padding-top:80px;padding-left:80px;padding-right:0;gap:0;">
 
       <!-- LEFT: text column -->
-      <div style="flex:0 0 auto;width:580px;padding-right:24px;">
+      <div id="heroText" style="flex:0 0 auto;width:580px;padding-right:24px;">
         <h1 class="text-5xl md:text-6xl font-black leading-[1.05] tracking-tight mb-7" style="color:#1a1a2e;">
           Elevate Your Day with<br>
           <span class="wisdom-gradient">Timeless</span> Wisdom
         </h1>
 
-        <p class="text-xl leading-relaxed mb-10 font-bold" style="color:#1a1a2e;opacity:.55;max-width:420px;">
-          One verse at a time.<br>1 minute a day is all it takes.
+        <p id="heroSubtext" class="text-xl leading-relaxed mb-10 font-bold"
+          style="color:#1a1a2e;opacity:.55;max-width:420px;">
+          One verse at a time<br>1 minute a day is all it takes
         </p>
 
         <div class="flex items-center gap-3 mb-8">
@@ -1185,10 +1496,12 @@
             class="flex items-center gap-3 px-5 py-3 rounded-2xl transition-all duration-300 hover:-translate-y-0.5"
             style="background:#1a1a2e;border:1.5px solid rgba(255,149,0,0.35);box-shadow:0 4px 18px rgba(26,26,46,0.18);color:#fff;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
             </svg>
             <div class="text-left">
-              <p style="color:rgba(255,255,255,.55);font-size:10px;font-weight:500;line-height:1;margin-bottom:2px;">Download on the</p>
+              <p style="color:rgba(255,255,255,.55);font-size:10px;font-weight:500;line-height:1;margin-bottom:2px;">
+                Download on the</p>
               <p class="font-bold text-sm leading-none">App Store</p>
             </div>
           </a>
@@ -1196,27 +1509,29 @@
             class="flex items-center gap-3 px-5 py-3 rounded-2xl transition-all duration-300 hover:-translate-y-0.5"
             style="background:#1a1a2e;border:1.5px solid rgba(255,149,0,0.35);box-shadow:0 4px 18px rgba(26,26,46,0.18);color:#fff;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/>
+              <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z" />
             </svg>
             <div class="text-left">
-              <p style="color:rgba(255,255,255,.55);font-size:10px;font-weight:500;line-height:1;margin-bottom:2px;">Get it on</p>
+              <p style="color:rgba(255,255,255,.55);font-size:10px;font-weight:500;line-height:1;margin-bottom:2px;">Get
+                it on</p>
               <p class="font-bold text-sm leading-none">Google Play</p>
             </div>
           </a>
         </div>
 
-        <div class="flex items-center gap-6">
-          <span class="text-3xl md:text-4xl font-black leading-none tracking-tight" style="color:#1a1a2e;">100% Free</span>
+        <div id="heroFreeBar" class="flex items-center gap-6">
+          <span id="heroFree" class="text-3xl md:text-4xl font-black leading-none tracking-tight" style="color:#1a1a2e;display:inline-block;">100% Free</span>
           <span style="color:#1a1a2e;opacity:.2;font-size:2rem;font-weight:100;">|</span>
-          <span class="text-3xl md:text-4xl font-black leading-none tracking-tight" style="color:#1a1a2e;">No Ads Ever</span>
+          <span id="heroNoAds" class="text-3xl md:text-4xl font-black leading-none tracking-tight" style="color:#1a1a2e;display:inline-block;">No Ads Ever</span>
         </div>
       </div>
 
       <!-- RIGHT: 3 device images — same layout as journey section -->
-      <div style="flex:1;position:relative;height:792px;max-width:40%;top:90px;">
+      <div id="heroDevices" style="flex:1;position:relative;height:792px;max-width:40%;top:90px;">
 
         <!-- Device 4 — left -->
-        <div id="heroDevice4" style="position:absolute;left:0;bottom:170px;width:55%;z-index:1;transition:left .05s linear;">
+        <div id="heroDevice4"
+          style="position:absolute;left:0;bottom:170px;width:55%;z-index:1;transition:left .05s linear;">
           <img src="Device4 Background Removed.png" alt="Journey"
             style="width:100%;filter:drop-shadow(0 24px 48px rgba(255,149,0,.25)) drop-shadow(0 4px 16px rgba(0,0,0,.10));">
         </div>
@@ -1228,7 +1543,8 @@
         </div>
 
         <!-- Device 3 — right, cropped edge -->
-        <div id="heroDevice3" style="position:absolute;right:-217px;bottom:138px;width:63%;z-index:2;transition:right .05s linear;">
+        <div id="heroDevice3"
+          style="position:absolute;right:-217px;bottom:138px;width:63%;z-index:2;transition:right .05s linear;">
           <img src="Device3 Background Removed.png" alt="Journal"
             style="width:100%;filter:drop-shadow(0 24px 48px rgba(244,208,63,.20)) drop-shadow(0 4px 16px rgba(0,0,0,.10));mask-image:linear-gradient(to left,black 65%,transparent 100%);-webkit-mask-image:linear-gradient(to left,black 65%,transparent 100%);">
         </div>
@@ -1237,11 +1553,39 @@
 
     </div>
 
+    <!-- Mobile-only: three devices + glow (hidden on desktop) -->
+    <div id="heroMobileGlow"
+      style="display:none;position:absolute;bottom:80px;left:50%;transform:translateX(-50%);width:420px;height:420px;background:radial-gradient(circle,rgba(255,149,0,.38),transparent 62%);filter:blur(80px);pointer-events:none;z-index:6;">
+    </div>
+    <!-- Left side device -->
+    <div id="heroMobileLeft"
+      style="display:none;position:absolute;left:-30px;bottom:70px;width:260px;z-index:10;will-change:transform;">
+      <img src="Device4 Background Removed.png" alt=""
+        style="width:100%;filter:drop-shadow(0 -12px 32px rgba(255,149,0,.30));mask-image:linear-gradient(to right,transparent 0%,black 35%,black 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 35%,black 100%);">
+    </div>
+    <!-- Center main device -->
+    <div id="heroMobileDevice"
+      style="display:none;position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:360px;z-index:15;will-change:transform;">
+      <img src="Device2 Background Removed.png" alt="Gita Streak app"
+        style="width:100%;filter:drop-shadow(0 -16px 48px rgba(255,149,0,.45)) drop-shadow(0 8px 20px rgba(0,0,0,.10));">
+    </div>
+    <!-- Right side device -->
+    <div id="heroMobileRight"
+      style="display:none;position:absolute;right:-51px;bottom:48px;width:295px;z-index:10;will-change:transform;">
+      <img src="Device3 Background Removed.png" alt=""
+        style="width:100%;filter:drop-shadow(0 -12px 32px rgba(255,149,0,.30));mask-image:linear-gradient(to left,transparent 0%,black 35%,black 100%);-webkit-mask-image:linear-gradient(to left,transparent 0%,black 35%,black 100%);">
+    </div>
+
     <!-- Scroll hint -->
-    <div id="scrollHint" style="position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:20;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.45;transition:opacity .4s ease;">
-      <span style="color:#1a1a2e;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;">Scroll to explore</span>
-      <div style="width:20px;height:32px;border:2px solid rgba(26,26,46,.35);border-radius:999px;display:flex;align-items:flex-start;justify-content:center;padding-top:6px;">
-        <div style="width:4px;height:8px;background:#1a1a2e;border-radius:999px;animation:heroScrollDot 1.8s ease-in-out infinite;"></div>
+    <div id="scrollHint"
+      style="position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:20;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.45;transition:opacity .4s ease;">
+      <span style="color:#1a1a2e;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;">Scroll
+        to explore</span>
+      <div
+        style="width:20px;height:32px;border:2px solid rgba(26,26,46,.35);border-radius:999px;display:flex;align-items:flex-start;justify-content:center;padding-top:6px;">
+        <div
+          style="width:4px;height:8px;background:#1a1a2e;border-radius:999px;animation:heroScrollDot 1.8s ease-in-out infinite;">
+        </div>
       </div>
     </div>
 
@@ -1270,7 +1614,8 @@
             style="scroll-margin-top:20px;">Your path to <span class="text-gradient">mindfulness.</span></h2>
         </div>
         <div class="md:max-w-sm">
-          <p class="text-white/60 text-xl md:text-2xl font-semibold leading-snug">Four ways to deepen your day: read, breathe, journal, or quiz. Five minutes is all it takes.</p>
+          <p class="text-white/60 text-xl md:text-2xl font-semibold leading-snug">Four ways to deepen your day: read,
+            breathe, journal, or quiz. Five minutes is all it takes</p>
         </div>
       </div>
 
@@ -1575,65 +1920,96 @@
   <!-- JOURNEY SCROLL STAGE                  -->
   <!-- ══════════════════════════════════════ -->
   <div id="journeyScrollStage" style="position:relative;height:120vh;background:#0a0a12;">
-    <div style="position:sticky;top:0;height:100vh;overflow:hidden;">
+    <div id="journeySticky" style="position:sticky;top:0;height:100vh;overflow:hidden;">
 
       <!-- Device showcase — scroll-driven fly-in -->
       <div id="journeyDeviceWrap" style="position:absolute;inset:0;width:100%;height:100%;background:#0a0a12;">
 
         <!-- Device 4 wrapper (left) -->
         <div id="jd4wrap" style="position:absolute;left:42%;bottom:14%;width:22%;z-index:2;will-change:transform;">
-          <div style="position:absolute;top:-30%;left:-35%;right:-35%;bottom:-40%;background:radial-gradient(ellipse at 50% 58%,rgba(255,130,0,.75),transparent 58%);filter:blur(52px);pointer-events:none;"></div>
-          <img src="Device4 Background Removed.png" alt="App screen" style="width:100%;position:relative;filter:drop-shadow(0 22px 46px rgba(255,149,0,.45)) drop-shadow(0 4px 14px rgba(0,0,0,.30));">
+          <div
+            style="position:absolute;top:-30%;left:-35%;right:-35%;bottom:-40%;background:radial-gradient(ellipse at 50% 58%,rgba(255,130,0,.75),transparent 58%);filter:blur(52px);pointer-events:none;">
+          </div>
+          <img src="Device4 Background Removed.png" alt="App screen"
+            style="width:100%;position:relative;filter:drop-shadow(0 22px 46px rgba(255,149,0,.45)) drop-shadow(0 4px 14px rgba(0,0,0,.30));">
         </div>
 
         <!-- Device 2 wrapper (center hero — largest) -->
         <div id="jd2wrap" style="position:absolute;left:54%;bottom:2%;width:31%;z-index:4;will-change:transform;">
-          <div style="position:absolute;top:-25%;left:-28%;right:-28%;bottom:-30%;background:radial-gradient(ellipse at 50% 62%,rgba(255,145,0,.85),transparent 56%);filter:blur(64px);pointer-events:none;"></div>
-          <img src="Device2 Background Removed.png" alt="Verse of the Day" style="width:100%;position:relative;filter:drop-shadow(0 32px 68px rgba(255,149,0,.52)) drop-shadow(0 8px 22px rgba(0,0,0,.35));">
+          <div
+            style="position:absolute;top:-25%;left:-28%;right:-28%;bottom:-30%;background:radial-gradient(ellipse at 50% 62%,rgba(255,145,0,.85),transparent 56%);filter:blur(64px);pointer-events:none;">
+          </div>
+          <img src="Device2 Background Removed.png" alt="Verse of the Day"
+            style="width:100%;position:relative;filter:drop-shadow(0 32px 68px rgba(255,149,0,.52)) drop-shadow(0 8px 22px rgba(0,0,0,.35));">
         </div>
 
         <!-- Device 3 wrapper (right, partially cropped) -->
         <div id="jd3wrap" style="position:absolute;right:0%;bottom:8%;width:25%;z-index:3;will-change:transform;">
-          <div style="position:absolute;top:-30%;left:-35%;right:-35%;bottom:-40%;background:radial-gradient(ellipse at 50% 56%,rgba(255,160,20,.72),transparent 58%);filter:blur(52px);pointer-events:none;"></div>
-          <img src="Device3 Background Removed.png" alt="Journal" style="width:100%;position:relative;filter:drop-shadow(0 22px 46px rgba(244,208,63,.42)) drop-shadow(0 4px 14px rgba(0,0,0,.28));mask-image:linear-gradient(to left,black 60%,transparent 100%);-webkit-mask-image:linear-gradient(to left,black 60%,transparent 100%);">
+          <div
+            style="position:absolute;top:-30%;left:-35%;right:-35%;bottom:-40%;background:radial-gradient(ellipse at 50% 56%,rgba(255,160,20,.72),transparent 58%);filter:blur(52px);pointer-events:none;">
+          </div>
+          <img src="Device3 Background Removed.png" alt="Journal"
+            style="width:100%;position:relative;filter:drop-shadow(0 22px 46px rgba(244,208,63,.42)) drop-shadow(0 4px 14px rgba(0,0,0,.28));mask-image:linear-gradient(to left,black 60%,transparent 100%);-webkit-mask-image:linear-gradient(to left,black 60%,transparent 100%);">
         </div>
 
       </div>
 
       <!-- Left-to-right gradient so text is readable -->
-      <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 38%,rgba(0,0,0,.10) 65%,transparent 100%);"></div>
+      <div
+        style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 38%,rgba(0,0,0,.10) 65%,transparent 100%);">
+      </div>
 
       <!-- Anchor for nav -->
       <div id="journey-heading" style="position:absolute;top:110px;z-index:2;"></div>
 
       <!-- Text overlay — left column -->
-      <div style="position:absolute;inset:0;z-index:2;display:flex;align-items:center;padding:80px 80px 40px;">
+      <div id="journeyTextOverlay"
+        style="position:absolute;inset:0;z-index:2;display:flex;align-items:center;padding:80px 80px 40px;">
         <div style="max-width:440px;">
-          <h2 class="text-4xl md:text-5xl font-black text-white leading-[1.06] mb-4">Your journey,<br>one verse <span class="wisdom-gradient">at a time.</span></h2>
-          <p class="text-white/60 text-sm leading-relaxed mb-7">From the moment you open the app to your daily moment of stillness, Gita Streak walks with you every step.</p>
+          <h2 class="text-4xl md:text-5xl font-black text-white leading-[1.06] mb-4">Your journey,<br>one verse <span
+              class="wisdom-gradient">at a time.</span></h2>
+          <p class="text-white/60 text-sm leading-relaxed mb-7">From the moment you open the app to your daily moment of
+            stillness, Gita Streak walks with you every step.</p>
 
           <div class="flex flex-col gap-5">
             <div class="flex gap-3 items-start">
-              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center"
+                style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
               </div>
               <div>
                 <p class="text-white font-black text-sm mb-0.5">Start your journey</p>
-                <p class="text-white/45 text-xs leading-relaxed">18 chapters, one verse at a time. Your path begins here.</p>
+                <p class="text-white/45 text-xs leading-relaxed">18 chapters, one verse at a time. Your path begins
+                  here.</p>
               </div>
             </div>
             <div class="flex gap-3 items-start">
-              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center"
+                style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                </svg>
               </div>
               <div>
                 <p class="text-white font-black text-sm mb-0.5">Daily verse & push notifications</p>
-                <p class="text-white/45 text-xs leading-relaxed">A fresh verse every morning so your practice never slips.</p>
+                <p class="text-white/45 text-xs leading-relaxed">A fresh verse every morning so your practice never
+                  slips.</p>
               </div>
             </div>
             <div class="flex gap-3 items-start">
-              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center"
+                style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
               </div>
               <div>
                 <p class="text-white font-black text-sm mb-0.5">Reflect & journal</p>
@@ -1641,21 +2017,39 @@
               </div>
             </div>
             <div class="flex gap-3 items-start">
-              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 22 12 17.27 5.8 22l2.39-8.14L2 9.36h7.61z"/></svg>
+              <div class="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center"
+                style="background:rgba(255,149,0,.18);border:1px solid rgba(255,149,0,.35);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 22 12 17.27 5.8 22l2.39-8.14L2 9.36h7.61z" />
+                </svg>
               </div>
               <div>
                 <p class="text-white font-black text-sm mb-0.5">Earn Karma & level up</p>
-                <p class="text-white/45 text-xs leading-relaxed">Every streak earns Karma Coins. Climb 22 ranks to liberation.</p>
+                <p class="text-white/45 text-xs leading-relaxed">Every streak earns Karma Coins. Climb 22 ranks to
+                  liberation.</p>
               </div>
             </div>
           </div>
 
           <div class="flex gap-8 mt-8 pt-6" style="border-top:1px solid rgba(255,255,255,.12);">
-            <div><p class="text-2xl font-black text-white"><span data-count="120">120</span><span class="text-saffron">+</span></p><p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Lessons</p></div>
-            <div><p class="text-2xl font-black" style="color:#F4D03F;"><span data-count="701">701</span></p><p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Verses</p></div>
-            <div><p class="text-2xl font-black text-white"><span data-count="18">18</span></p><p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Chapters</p></div>
-            <div><p class="text-2xl font-black text-saffron"><span data-count="22">22</span></p><p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Karma Ranks</p></div>
+            <div>
+              <p class="text-2xl font-black text-white"><span data-count="120">120</span><span
+                  class="text-saffron">+</span></p>
+              <p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Lessons</p>
+            </div>
+            <div>
+              <p class="text-2xl font-black" style="color:#F4D03F;"><span data-count="701">701</span></p>
+              <p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Verses</p>
+            </div>
+            <div>
+              <p class="text-2xl font-black text-white"><span data-count="18">18</span></p>
+              <p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Chapters</p>
+            </div>
+            <div>
+              <p class="text-2xl font-black text-saffron"><span data-count="22">22</span></p>
+              <p class="text-white/40 text-xs font-semibold mt-0.5 uppercase tracking-wide">Karma Ranks</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1683,36 +2077,76 @@
           <h2 class="text-3xl md:text-4xl font-black text-white leading-none mb-2">Questions?</h2>
           <div class="flex flex-col gap-2">
 
-            <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
+            <div class="faq-item overflow-hidden"
+              style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+              <button
+                class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
                 <span>Is it free?</span>
-                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300"
+                  style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
-              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Yes. Core lessons, streaks, Karma Coins, and Gopi are free forever. Always.</div></div>
+              <div class="faq-answer px-5">
+                <div class="pb-4 pt-2 text-sm leading-relaxed"
+                  style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Yes. Core lessons,
+                  streaks, Karma Coins, and Gopi are free forever. Always.</div>
+              </div>
             </div>
 
-            <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
+            <div class="faq-item overflow-hidden"
+              style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+              <button
+                class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
                 <span>Do I need to know Sanskrit?</span>
-                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300"
+                  style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
-              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Not at all. Every lesson is in plain English. If an 8-year-old can't understand it, we rewrite it.</div></div>
+              <div class="faq-answer px-5">
+                <div class="pb-4 pt-2 text-sm leading-relaxed"
+                  style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Not at all. Every
+                  lesson is in plain English. If an 8-year-old can't understand it, we rewrite it.</div>
+              </div>
             </div>
 
-            <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
+            <div class="faq-item overflow-hidden"
+              style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+              <button
+                class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
                 <span>iOS or Android?</span>
-                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300"
+                  style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
-              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Both. Built with React Native. Works beautifully on iPhone and Android.</div></div>
+              <div class="faq-answer px-5">
+                <div class="pb-4 pt-2 text-sm leading-relaxed"
+                  style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Both. Built with React
+                  Native. Works beautifully on iPhone and Android.</div>
+              </div>
             </div>
 
-            <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
+            <div class="faq-item overflow-hidden"
+              style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
+              <button
+                class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
                 <span>How long to finish all 120 lessons?</span>
-                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="faq-chevron flex-shrink-0 transition-transform duration-300"
+                  style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
-              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">At one lesson a day, about 4 months. The Gita rewards patience. There is no rush.</div></div>
+              <div class="faq-answer px-5">
+                <div class="pb-4 pt-2 text-sm leading-relaxed"
+                  style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">At one lesson a day,
+                  about 4 months. The Gita rewards patience. There is no rush.</div>
+              </div>
             </div>
 
           </div>
@@ -1720,19 +2154,33 @@
 
         <!-- RIGHT 50%: Download CTA -->
         <div class="flex flex-col justify-center">
-          <h2 class="text-4xl md:text-5xl font-black text-white leading-[1.05] mb-8">Download the app<br>for your daily<br>Sadhana.</h2>
-          <div class="flex items-center gap-3">
+          <h2 class="text-4xl md:text-5xl font-black text-white leading-[1.05] mb-8">Download the app<br>for your
+            daily<br>Sadhana.</h2>
+          <div id="downloadBtnsRow" class="flex items-center gap-3">
             <a href="https://apps.apple.com/us/iphone/search?term=gita%20streak" target="_blank" rel="noopener"
               class="flex items-center gap-3 bg-white/15 border border-white/25 text-white px-5 py-3 rounded-2xl hover:bg-white/25 transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <div class="text-left"><p class="text-white/60 text-[10px] font-medium leading-none mb-0.5">Download on the</p><p class="font-bold text-sm leading-none">App Store</p></div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+              </svg>
+              <div class="text-left">
+                <p class="text-white/60 text-[10px] font-medium leading-none mb-0.5">Download on the</p>
+                <p class="font-bold text-sm leading-none">App Store</p>
+              </div>
             </a>
-            <a href="https://play.google.com/store/search?q=gita%20streak&c=apps&hl=en_US" target="_blank" rel="noopener"
+            <a href="https://play.google.com/store/search?q=gita%20streak&c=apps&hl=en_US" target="_blank"
+              rel="noopener"
               class="flex items-center gap-3 bg-white/15 border border-white/25 text-white px-5 py-3 rounded-2xl hover:bg-white/25 transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
-              <div class="text-left"><p class="text-white/60 text-[10px] font-medium leading-none mb-0.5">Get it on</p><p class="font-bold text-sm leading-none">Google Play</p></div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z" />
+              </svg>
+              <div class="text-left">
+                <p class="text-white/60 text-[10px] font-medium leading-none mb-0.5">Get it on</p>
+                <p class="font-bold text-sm leading-none">Google Play</p>
+              </div>
             </a>
-            <img loading="lazy" src="apple-touch-icon.png" alt="Gita Streak" style="width:104px;height:104px;object-fit:cover;object-position:center;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,0.22),0 2px 0 rgba(255,255,255,0.15) inset;flex-shrink:0;position:relative;top:-27px;left:150px;">
+            <img id="downloadAppIcon" loading="lazy" src="apple-touch-icon.png" alt="Gita Streak"
+              style="width:104px;height:104px;object-fit:cover;object-position:center;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,0.22),0 2px 0 rgba(255,255,255,0.15) inset;flex-shrink:0;position:relative;top:-27px;left:150px;">
           </div>
         </div>
 
@@ -1750,20 +2198,28 @@
   <section id="maker" style="background:#070712;padding:130px 0 120px;position:relative;overflow:hidden;">
 
     <!-- Cursor-reactive orange glow -->
-    <div id="makerCursorGlow" style="position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(520px circle at 50% 50%,rgba(255,149,0,.20) 0%,rgba(255,100,0,.09) 42%,transparent 66%);transition:background .07s ease;"></div>
+    <div id="makerCursorGlow"
+      style="position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(520px circle at 50% 50%,rgba(255,149,0,.20) 0%,rgba(255,100,0,.09) 42%,transparent 66%);transition:background .07s ease;">
+    </div>
 
     <!-- Subtle dot grid -->
-    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:1;"></div>
+    <div
+      style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:1;">
+    </div>
 
     <!-- Horizontal accent line -->
-    <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,149,0,.3) 30%,rgba(255,149,0,.3) 70%,transparent);z-index:1;"></div>
+    <div
+      style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,149,0,.3) 30%,rgba(255,149,0,.3) 70%,transparent);z-index:1;">
+    </div>
 
     <div style="max-width:960px;margin:0 auto;padding:0 24px;position:relative;z-index:3;">
 
       <!-- Label -->
-      <p style="text-align:center;color:#FF9500;font-size:10.5px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;margin-bottom:72px;opacity:.85;">The Maker</p>
+      <p
+        style="text-align:center;color:#FF9500;font-size:10.5px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;margin-bottom:72px;opacity:.85;">
+        The Maker</p>
 
-      <div style="display:grid;grid-template-columns:1fr 1.35fr;gap:80px;align-items:center;">
+      <div id="makerGrid" style="display:grid;grid-template-columns:1fr 1.35fr;gap:80px;align-items:center;">
 
         <!-- ── Photo column ── -->
         <div style="display:flex;flex-direction:column;align-items:center;">
@@ -1771,45 +2227,67 @@
           <!-- Photo with flowing gradient border -->
           <div style="position:relative;width:210px;height:268px;">
             <!-- 1px gradient border via padding trick -->
-            <div class="maker-border-ring" style="position:absolute;inset:0;border-radius:38px;padding:1.5px;background:conic-gradient(from var(--angle,0deg),#FF9500 0%,#F4D03F 25%,rgba(255,149,0,.15) 50%,#FF6A00 75%,#FF9500 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;"></div>
+            <div class="maker-border-ring"
+              style="position:absolute;inset:0;border-radius:38px;padding:1.5px;background:conic-gradient(from var(--angle,0deg),#FF9500 0%,#F4D03F 25%,rgba(255,149,0,.15) 50%,#FF6A00 75%,#FF9500 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;">
+            </div>
             <!-- Photo -->
             <div style="position:absolute;inset:1.5px;border-radius:37px;overflow:hidden;background:#0d0d1a;">
-              <img src="Mypic.png" alt="Jeyanth Kothari" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+              <img src="Mypic.png" alt="Jeyanth Kothari"
+                style="width:100%;height:100%;object-fit:cover;object-position:center;">
             </div>
             <!-- Soft glow bloom behind -->
-            <div style="position:absolute;inset:-24px;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(255,149,0,.22),transparent 65%);animation:photoGlowPulse 4s ease-in-out infinite;"></div>
+            <div
+              style="position:absolute;inset:-24px;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(255,149,0,.22),transparent 65%);animation:photoGlowPulse 4s ease-in-out infinite;">
+            </div>
           </div>
 
           <!-- Name & title -->
           <div style="margin-top:28px;text-align:center;">
-            <p style="color:#fff;font-size:1.15rem;font-weight:900;letter-spacing:-.01em;margin-bottom:5px;">Jeyanth Kothari</p>
-            <p style="color:rgba(255,255,255,.32);font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;">Founder · Engineer</p>
+            <p style="color:#fff;font-size:1.15rem;font-weight:900;letter-spacing:-.01em;margin-bottom:5px;">Jeyanth
+              Kothari</p>
+            <p
+              style="color:rgba(255,255,255,.32);font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;">
+              Founder · Engineer</p>
           </div>
 
         </div>
 
         <!-- ── Story column ── -->
         <div>
-          <h2 style="color:#fff;font-size:clamp(2.6rem,5vw,3.6rem);font-weight:900;line-height:1.08;letter-spacing:-.02em;margin-bottom:28px;">Hi, I'm Jeyanth.</h2>
-          <p style="color:rgba(255,255,255,.5);font-size:18px;line-height:1.85;margin-bottom:20px;">I grew up with the Gita on the bookshelf, admired but never really read. When I finally sat down with it as an adult, it changed how I think about work, stress, and who I'm trying to become.</p>
-          <p style="color:rgba(255,255,255,.5);font-size:18px;line-height:1.85;margin-bottom:20px;">I wanted to build something that could do the same for anyone, anywhere. Completely free, no distractions. Just the teaching.</p>
-          <p style="color:rgba(255,255,255,.5);font-size:18px;line-height:1.85;">The wisdom of the Bhagavad Gita deserves to be in everyone's hands. Not locked behind paywalls, not buried under ads, not watered down.</p>
+          <h2
+            style="color:#fff;font-size:clamp(2.6rem,5vw,3.6rem);font-weight:900;line-height:1.08;letter-spacing:-.02em;margin-bottom:28px;">
+            Hi, I'm Jeyanth.</h2>
+          <p style="color:rgba(255,255,255,.5);font-size:18px;line-height:1.85;margin-bottom:20px;">I grew up with the
+            Gita on the bookshelf, admired but never really read. When I finally sat down with it as an adult, it
+            changed how I think about work, stress, and who I'm trying to become.</p>
+          <p style="color:rgba(255,255,255,.5);font-size:18px;line-height:1.85;margin-bottom:20px;">I wanted to build
+            something that could do the same for anyone, anywhere. Completely free, no distractions. Just the teaching.
+          </p>
+          <p style="color:rgba(255,255,255,.5);font-size:18px;line-height:1.85;">The wisdom of the Bhagavad Gita
+            deserves to be in everyone's hands. Not locked behind paywalls, not buried under ads, not watered down.</p>
 
           <!-- Divider + stat row -->
-          <div style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.07);display:flex;gap:32px;">
+          <div
+            style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.07);display:flex;gap:32px;">
             <div>
               <p style="color:#FF9500;font-size:1.6rem;font-weight:900;line-height:1;">120</p>
-              <p style="color:rgba(255,255,255,.35);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;">Lessons</p>
+              <p
+                style="color:rgba(255,255,255,.35);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;">
+                Lessons</p>
             </div>
             <div style="width:1px;background:rgba(255,255,255,.07);"></div>
             <div>
               <p style="color:#FF9500;font-size:1.6rem;font-weight:900;line-height:1;">18</p>
-              <p style="color:rgba(255,255,255,.35);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;">Chapters</p>
+              <p
+                style="color:rgba(255,255,255,.35);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;">
+                Chapters</p>
             </div>
             <div style="width:1px;background:rgba(255,255,255,.07);"></div>
             <div>
               <p style="color:#FF9500;font-size:1.6rem;font-weight:900;line-height:1;">$0</p>
-              <p style="color:rgba(255,255,255,.35);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;">To Download</p>
+              <p
+                style="color:rgba(255,255,255,.35);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;">
+                To Download</p>
             </div>
           </div>
         </div>
@@ -1824,7 +2302,9 @@
   <!-- FOOTER                                 -->
   <!-- ══════════════════════════════════════ -->
   <section id="marquee-section" style="background:#070712;padding:44px 0;position:relative;overflow:hidden;">
-    <div id="marqueeGlow" style="position:absolute;inset:0;z-index:1;pointer-events:none;transition:background .08s ease;background:transparent;"></div>
+    <div id="marqueeGlow"
+      style="position:absolute;inset:0;z-index:1;pointer-events:none;transition:background .08s ease;background:transparent;">
+    </div>
     <div class="marquee" style="position:relative;z-index:2;">
       <div class="marquee-track">
         <span class="marquee-item">You have a right to action <span class="ref">2:47</span></span>
@@ -1849,9 +2329,13 @@
 
   <footer id="siteFooter" style="background:#070712;padding:72px 0 36px;position:relative;overflow:hidden;">
     <!-- Ambient glow -->
-    <div style="position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:200px;background:radial-gradient(ellipse,rgba(255,149,0,.08),transparent 70%);pointer-events:none;"></div>
+    <div
+      style="position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:200px;background:radial-gradient(ellipse,rgba(255,149,0,.08),transparent 70%);pointer-events:none;">
+    </div>
     <!-- Cursor-reactive glow -->
-    <div id="footerGlow" style="position:absolute;inset:0;z-index:0;pointer-events:none;transition:background .08s ease;background:transparent;"></div>
+    <div id="footerGlow"
+      style="position:absolute;inset:0;z-index:0;pointer-events:none;transition:background .08s ease;background:transparent;">
+    </div>
 
     <div class="max-w-6xl mx-auto px-6" style="position:relative;z-index:2;">
 
@@ -1861,22 +2345,29 @@
         <!-- Brand -->
         <div style="max-width:300px;">
           <a href="#" class="flex items-center gap-3 mb-5">
-            <img loading="lazy" src="apple-touch-icon.png" alt="Gita Streak" style="width:42px;height:42px;object-fit:cover;object-position:center;border-radius:11px;">
+            <img loading="lazy" src="apple-touch-icon.png" alt="Gita Streak"
+              style="width:42px;height:42px;object-fit:cover;object-position:center;border-radius:11px;">
             <span class="text-white font-black text-lg tracking-tight">Gita Streak</span>
           </a>
-          <p style="color:rgba(255,255,255,.38);font-size:13px;line-height:1.7;">Ancient wisdom. Modern habits.<br>One verse at a time. Free, forever.</p>
+          <p style="color:rgba(255,255,255,.38);font-size:13px;line-height:1.7;">Ancient wisdom. Modern habits.<br>One
+            verse at a time. Free, forever.</p>
           <!-- Mini store badges -->
           <div class="flex items-center gap-3 mt-6">
             <a href="https://apps.apple.com/us/iphone/search?term=gita%20streak" target="_blank" rel="noopener"
               class="flex items-center gap-2 px-4 py-2 rounded-xl transition-colors hover:bg-white/10"
               style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+              </svg>
               <span style="color:rgba(255,255,255,.75);font-size:11px;font-weight:700;">App Store</span>
             </a>
-            <a href="https://play.google.com/store/search?q=gita%20streak&c=apps&hl=en_US" target="_blank" rel="noopener"
-              class="flex items-center gap-2 px-4 py-2 rounded-xl transition-colors hover:bg-white/10"
+            <a href="https://play.google.com/store/search?q=gita%20streak&c=apps&hl=en_US" target="_blank"
+              rel="noopener" class="flex items-center gap-2 px-4 py-2 rounded-xl transition-colors hover:bg-white/10"
               style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z" />
+              </svg>
               <span style="color:rgba(255,255,255,.75);font-size:11px;font-weight:700;">Google Play</span>
             </a>
           </div>
@@ -1885,23 +2376,43 @@
         <!-- Link columns -->
         <div class="flex gap-12 md:gap-16">
           <div>
-            <p style="color:rgba(255,255,255,.25);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;">Product</p>
+            <p
+              style="color:rgba(255,255,255,.25);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;">
+              Product</p>
             <ul style="display:flex;flex-direction:column;gap:12px;">
-              <li><a href="#wellness" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Features</a></li>
-              <li><a href="#journey-heading" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Journey</a></li>
-              <li><a href="#faq" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">FAQ</a></li>
+              <li><a href="#wellness"
+                  style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;"
+                  class="hover:text-white">Features</a></li>
+              <li><a href="#journey-heading"
+                  style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;"
+                  class="hover:text-white">Journey</a></li>
+              <li><a href="#faq"
+                  style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;"
+                  class="hover:text-white">FAQ</a></li>
             </ul>
           </div>
           <div>
-            <p style="color:rgba(255,255,255,.25);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;">Company</p>
+            <p
+              style="color:rgba(255,255,255,.25);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;">
+              Company</p>
             <ul style="display:flex;flex-direction:column;gap:12px;">
-              <li><a href="#maker" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">About</a></li>
-              <li><a href="support.html" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Help Center</a></li>
+              <li><a href="#maker"
+                  style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;"
+                  class="hover:text-white">About</a></li>
+              <li><a href="support.html"
+                  style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;"
+                  class="hover:text-white">Help Center</a></li>
               <li style="margin-top:4px;">
                 <div id="supportEntry" style="position:relative;display:inline-block;">
-                  <span id="supportLabel" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;cursor:default;transition:color .2s;">Support</span>
-                  <div id="supportPopover" style="position:absolute;left:0;top:calc(100% + 8px);display:flex;align-items:center;gap:8px;background:#1a1a2e;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px 12px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;transform:translateY(-4px);z-index:10;box-shadow:0 8px 24px rgba(0,0,0,.4);">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,149,0,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+                  <span id="supportLabel"
+                    style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;cursor:default;transition:color .2s;">Support</span>
+                  <div id="supportPopover"
+                    style="position:absolute;left:0;top:calc(100% + 8px);display:flex;align-items:center;gap:8px;background:#1a1a2e;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px 12px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;transform:translateY(-4px);z-index:10;box-shadow:0 8px 24px rgba(0,0,0,.4);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,149,0,.85)"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m22 7-10 7L2 7" />
+                    </svg>
                     <span style="color:rgba(255,255,255,.8);font-size:12px;font-weight:600;">support@jeystack.com</span>
                     <button id="copyEmail" onclick="(function(){
                       navigator.clipboard.writeText('support@jeystack.com');
@@ -1909,36 +2420,54 @@
                       var chk=document.querySelector('.check-ic');
                       ic.style.display='none'; chk.style.display='block';
                       setTimeout(function(){ ic.style.display='block'; chk.style.display='none'; },1600);
-                    })()" style="background:none;border:none;padding:2px;cursor:pointer;display:flex;align-items:center;color:rgba(255,255,255,.3);transition:color .15s;" onmouseenter="this.style.color='rgba(255,149,0,.9)'" onmouseleave="this.style.color='rgba(255,255,255,.3)'">
-                      <svg class="copy-ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                      <svg class="check-ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF9500" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polyline points="20 6 9 17 4 12"/></svg>
+                    })()"
+                      style="background:none;border:none;padding:2px;cursor:pointer;display:flex;align-items:center;color:rgba(255,255,255,.3);transition:color .15s;"
+                      onmouseenter="this.style.color='rgba(255,149,0,.9)'"
+                      onmouseleave="this.style.color='rgba(255,255,255,.3)'">
+                      <svg class="copy-ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                      </svg>
+                      <svg class="check-ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF9500"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
                     </button>
                   </div>
                 </div>
                 <script>
-                  (function(){
-                    var entry=document.getElementById('supportEntry');
-                    var pop=document.getElementById('supportPopover');
-                    var lbl=document.getElementById('supportLabel');
-                    entry.addEventListener('mouseenter',function(){
-                      pop.style.opacity='1'; pop.style.pointerEvents='auto'; pop.style.transform='translateY(0)';
-                      lbl.style.color='rgba(255,255,255,.9)';
-                    });
-                    entry.addEventListener('mouseleave',function(){
-                      pop.style.opacity='0'; pop.style.pointerEvents='none'; pop.style.transform='translateY(-4px)';
-                      lbl.style.color='rgba(255,255,255,.55)';
-                    });
-                  })();
+                    (function () {
+                      var entry = document.getElementById('supportEntry');
+                      var pop = document.getElementById('supportPopover');
+                      var lbl = document.getElementById('supportLabel');
+                      entry.addEventListener('mouseenter', function () {
+                        pop.style.opacity = '1'; pop.style.pointerEvents = 'auto'; pop.style.transform = 'translateY(0)';
+                        lbl.style.color = 'rgba(255,255,255,.9)';
+                      });
+                      entry.addEventListener('mouseleave', function () {
+                        pop.style.opacity = '0'; pop.style.pointerEvents = 'none'; pop.style.transform = 'translateY(-4px)';
+                        lbl.style.color = 'rgba(255,255,255,.55)';
+                      });
+                    })();
                 </script>
               </li>
             </ul>
           </div>
           <div>
-            <p style="color:rgba(255,255,255,.25);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;">Legal</p>
+            <p
+              style="color:rgba(255,255,255,.25);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;">
+              Legal</p>
             <ul style="display:flex;flex-direction:column;gap:12px;">
-              <li><a href="privacy.html" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Privacy Policy</a></li>
-              <li><a href="terms.html" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Terms of Service</a></li>
-              <li><a href="delete-account.html" style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;" class="hover:text-white">Delete Account</a></li>
+              <li><a href="privacy.html"
+                  style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;"
+                  class="hover:text-white">Privacy Policy</a></li>
+              <li><a href="terms.html"
+                  style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;"
+                  class="hover:text-white">Terms of Service</a></li>
+              <li><a href="delete-account.html"
+                  style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:color .2s;"
+                  class="hover:text-white">Delete Account</a></li>
             </ul>
           </div>
         </div>
@@ -1946,8 +2475,10 @@
       </div>
 
       <!-- Bottom bar -->
-      <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;">
-        <p style="color:rgba(255,255,255,.22);font-size:12px;font-weight:600;">© 2026 JeyStack LLC. All rights reserved.</p>
+      <div
+        style="border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;">
+        <p style="color:rgba(255,255,255,.22);font-size:12px;font-weight:600;">© 2026 JeyStack LLC. All rights reserved.
+        </p>
         <p style="color:rgba(255,255,255,.12);font-size:11px;">Made with devotion.</p>
       </div>
 
@@ -2192,6 +2723,7 @@
       const d4 = document.getElementById('heroDevice4');
       const d3 = document.getElementById('heroDevice3');
       if (!d4 || !d3) return;
+      if (window.innerWidth < 768) return;
 
       window._heroAnimDone = false;
 
@@ -2238,6 +2770,7 @@
       const d4 = document.getElementById('heroDevice4');
       const d3 = document.getElementById('heroDevice3');
       if (!d4 || !d3) return;
+      if (window.innerWidth < 768) return;
 
       function eio(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
 
@@ -2261,6 +2794,7 @@
       const d4 = document.getElementById('heroDevice4');
       const d3 = document.getElementById('heroDevice3');
       if (!d4 || !d3) return;
+      if (window.innerWidth < 768) return;
 
       const FREQ = (2 * Math.PI) / 30000; // one full cycle every 30 s
       let baseD4, baseD3;
@@ -2326,10 +2860,11 @@
        final positions as the user scrolls through the stage.
     ════════════════════════════════════════════════════ */
     (function () {
+      if (window.innerWidth < 768) return;
       const stage = document.getElementById('journeyScrollStage');
-      const jd4w  = document.getElementById('jd4wrap');
-      const jd2w  = document.getElementById('jd2wrap');
-      const jd3w  = document.getElementById('jd3wrap');
+      const jd4w = document.getElementById('jd4wrap');
+      const jd2w = document.getElementById('jd2wrap');
+      const jd3w = document.getElementById('jd3wrap');
       if (!stage || !jd4w || !jd2w || !jd3w) return;
 
       /* Set initial off-screen positions immediately so first paint shows
@@ -2344,23 +2879,23 @@
       let rafPending = false;
 
       function update() {
-        const stageTop  = stage.getBoundingClientRect().top + window.scrollY;
-        const vh        = window.innerHeight;
+        const stageTop = stage.getBoundingClientRect().top + window.scrollY;
+        const vh = window.innerHeight;
         const maxScroll = stage.offsetHeight - vh;
 
         /* Fly-in: starts as section enters bottom of viewport */
         const animStart = stageTop - vh;
-        const animEnd   = stageTop + vh * 0.15;
+        const animEnd = stageTop + vh * 0.15;
         const raw = Math.max(0, Math.min(1, (window.scrollY - animStart) / (animEnd - animStart)));
-        const t   = easeOutCubic(raw);
+        const t = easeOutCubic(raw);
         const inv = 1 - t;
 
         /* Exit parallax: slow drift once sticky phase ends and section scrolls out */
         const exitDelta = Math.max(0, window.scrollY - (stageTop + maxScroll));
-        const ef  = 0.16;
+        const ef = 0.16;
         const ex4 = -(exitDelta * ef * 0.5);
-        const ey  = -(exitDelta * ef);
-        const ex3 =  (exitDelta * ef * 0.5);
+        const ey = -(exitDelta * ef);
+        const ex3 = (exitDelta * ef * 0.5);
 
         jd4w.style.transform = `translateX(calc(${inv * -130}vw + ${ex4.toFixed(1)}px)) translateY(calc(${inv * 40}vh + ${ey.toFixed(1)}px)) rotate(${(inv * -34).toFixed(2)}deg) scale(${(0.45 + t * 0.55).toFixed(3)})`;
         jd2w.style.transform = `translateY(calc(${inv * 120}vh + ${(ey * 0.7).toFixed(1)}px)) scale(${(0.32 + t * 0.68).toFixed(3)})`;
@@ -2374,6 +2909,144 @@
       }, { passive: true });
 
       update();
+    })();
+
+    /* ── Mobile hero: side-device + free-bar fly-in, scroll drift ── */
+    (function () {
+      if (window.innerWidth >= 768) return;
+
+      const left  = document.getElementById('heroMobileLeft');
+      const right = document.getElementById('heroMobileRight');
+      const glow  = document.getElementById('heroMobileGlow');
+      const free  = document.getElementById('heroFree');
+      const noAds = document.getElementById('heroNoAds');
+      if (!left || !right) return;
+
+      /* Center device is completely static — never touched */
+
+      const snap = (el, t) => { el.style.transition = 'none'; el.style.transform = t; };
+
+      /* Start: side devices off-screen, free bar text shifted inward */
+      snap(left,  'translateX(-240px)');
+      snap(right, 'translateX(240px)');
+      if (free)  { free.style.transition  = 'none'; free.style.transform  = 'translateX(-56px)'; }
+      if (noAds) { noAds.style.transition = 'none'; noAds.style.transform = 'translateX(56px)';  }
+      if (glow)  { glow.style.transition  = 'none'; glow.style.opacity    = '0'; }
+
+      /* Fly in */
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          const ease = 'cubic-bezier(0.16,1,0.3,1)';
+          left.style.transition  = `transform 2.4s ${ease}`;
+          right.style.transition = `transform 2.4s ${ease} 0.15s`;
+          if (free)  free.style.transition  = `transform 1.5s ${ease} 0.4s`;
+          if (noAds) noAds.style.transition = `transform 1.5s ${ease} 0.55s`;
+          if (glow)  glow.style.transition  = 'opacity 1.4s ease 0.5s';
+
+          left.style.transform  = 'translateX(0)';
+          right.style.transform = 'translateX(0)';
+          if (free)  free.style.transform  = 'translateX(0)';
+          if (noAds) noAds.style.transform = 'translateX(0)';
+          if (glow)  glow.style.opacity = '1';
+        }, 180);
+      });
+
+      /* Scroll drift — all transitions stripped once scrolling begins */
+      let rafPending = false;
+      let scrolling  = false;
+
+      window.addEventListener('scroll', () => {
+        if (rafPending) return;
+        rafPending = true;
+        requestAnimationFrame(() => {
+          rafPending = false;
+          const sy = window.scrollY;
+          const vh = window.innerHeight;
+
+          if (!scrolling && sy > 8) {
+            scrolling = true;
+            left.style.transition  = 'none';
+            right.style.transition = 'none';
+            if (free)  free.style.transition  = 'none';
+            if (noAds) noAds.style.transition = 'none';
+            if (glow)  glow.style.transition  = 'none';
+          }
+
+          /* Side devices: slow drift out over 2 viewports */
+          const pd = Math.min(1, sy / (vh * 2));
+          left.style.transform  = `translateX(${pd * -110}px)`;
+          right.style.transform = `translateX(${pd * 110}px)`;
+
+          /* Free bar: slower drift back to their sides */
+          const pt = Math.min(1, sy / (vh * 1.8));
+          if (free)  free.style.transform  = `translateX(${pt * -60}px)`;
+          if (noAds) noAds.style.transform = `translateX(${pt * 60}px)`;
+          if (glow)  glow.style.opacity = `${(1 - pt).toFixed(2)}`;
+        });
+      }, { passive: true });
+    })();
+
+    /* ── Mobile: bidirectional scroll-reveal — cards fall, text slides from sides ── */
+    (function () {
+      if (window.innerWidth >= 768) return;
+
+      function ease(t) { return 1 - Math.pow(1 - t, 3); }
+
+      const sw  = window.innerWidth;          /* screen width for off-screen offset */
+      const items = [];
+
+      /* axis:'y' → fall from below  |  axis:'x', d<0 → slide from left  |  d>0 → slide from right */
+      const addY   = (sel, d) => document.querySelectorAll(sel).forEach(el => items.push({ el, axis: 'y', d }));
+      const addL   = (sel, d) => document.querySelectorAll(sel).forEach(el => items.push({ el, axis: 'x', d: -d }));
+      const addR   = (sel, d) => document.querySelectorAll(sel).forEach(el => items.push({ el, axis: 'x', d }));
+      const addAlt = (sel, d) => document.querySelectorAll(sel).forEach((el, i) =>
+        items.push({ el, axis: 'x', d: i % 2 === 0 ? -d : d }));
+
+      /* Cards fall into place */
+      addY('#practice .glass-card',   30);
+      addY('#features .card-reveal',  30);
+      addY('.faq-item',               24);
+
+      /* Text slides in from the sides — out of the screen */
+      addL('.fade-up',                sw);
+      addL('#journeyTextOverlay > *', sw);
+      addL('#download-cta h2',        sw);
+      addR('#download-cta p',         sw);
+      addL('#downloadBtnsRow',        sw * 0.6);
+      addAlt('#makerGrid > *',        sw);
+
+      /* Kill CSS transitions so scroll drives transforms directly */
+      items.forEach(({ el }) => {
+        el.style.transition = 'none';
+        el.style.willChange = 'transform, opacity';
+      });
+
+      function calcP(el) {
+        const r  = el.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const enter = Math.max(0, Math.min(1, (vh * 0.9 - r.top) / (vh * 0.28)));
+        const exit  = Math.max(0, Math.min(1,  r.bottom           / (vh * 0.22)));
+        return Math.min(enter, exit);
+      }
+
+      function update() {
+        items.forEach(({ el, axis, d }) => {
+          const t = ease(calcP(el));
+          el.style.transform = axis === 'y'
+            ? `translateY(${((1 - t) * d).toFixed(1)}px)`
+            : `translateX(${((1 - t) * d).toFixed(1)}px)`;
+          el.style.opacity = t.toFixed(3);
+        });
+      }
+
+      update();
+
+      let raf = false;
+      window.addEventListener('scroll', () => {
+        if (raf) return;
+        raf = true;
+        requestAnimationFrame(() => { raf = false; update(); });
+      }, { passive: true });
     })();
 
     document.addEventListener('DOMContentLoaded', function () {
