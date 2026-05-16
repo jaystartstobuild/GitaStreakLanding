@@ -16,14 +16,14 @@
   <link rel="canonical" href="https://gitastreak.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gitastreak.com/">
-  <meta property="og:title" content="Gita Streak — Ancient wisdom. Modern habits.">
+  <meta property="og:title" content="Gita Streak: Ancient wisdom. Modern habits.">
   <meta property="og:description" content="Master the Bhagavad Gita in 5 minutes a day. 120 lessons, daily streaks, and Gopi your friendly guide.">
   <meta property="og:image" content="https://gitastreak.com/android-chrome-512x512.png">
   <meta property="og:image:width" content="512">
   <meta property="og:image:height" content="512">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://gitastreak.com/">
-  <meta name="twitter:title" content="Gita Streak — Ancient wisdom. Modern habits.">
+  <meta name="twitter:title" content="Gita Streak: Ancient wisdom. Modern habits.">
   <meta name="twitter:description" content="Master the Bhagavad Gita in 5 minutes a day. 120 lessons, daily streaks, and Gopi your friendly guide.">
   <meta name="twitter:image" content="https://gitastreak.com/android-chrome-512x512.png">
 
@@ -1270,7 +1270,7 @@
             style="scroll-margin-top:20px;">Your path to <span class="text-gradient">mindfulness.</span></h2>
         </div>
         <div class="md:max-w-sm">
-          <p class="text-white/60 text-xl md:text-2xl font-semibold leading-snug">Four ways to deepen your day — read, breathe, journal, or quiz. Five minutes is all it takes.</p>
+          <p class="text-white/60 text-xl md:text-2xl font-semibold leading-snug">Four ways to deepen your day: read, breathe, journal, or quiz. Five minutes is all it takes.</p>
         </div>
       </div>
 
@@ -1574,11 +1574,31 @@
   <!-- ══════════════════════════════════════ -->
   <!-- JOURNEY SCROLL STAGE                  -->
   <!-- ══════════════════════════════════════ -->
-  <div id="journeyScrollStage" style="position:relative;height:270vh;background:#0a0a12;">
+  <div id="journeyScrollStage" style="position:relative;height:120vh;background:#0a0a12;">
     <div style="position:sticky;top:0;height:100vh;overflow:hidden;">
 
-      <!-- Full-screen canvas -->
-      <canvas id="journeyCanvas" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;background:#0a0a12;"></canvas>
+      <!-- Device showcase — scroll-driven fly-in -->
+      <div id="journeyDeviceWrap" style="position:absolute;inset:0;width:100%;height:100%;background:#0a0a12;">
+
+        <!-- Device 4 wrapper (left) -->
+        <div id="jd4wrap" style="position:absolute;left:42%;bottom:14%;width:22%;z-index:2;will-change:transform;">
+          <div style="position:absolute;top:-30%;left:-35%;right:-35%;bottom:-40%;background:radial-gradient(ellipse at 50% 58%,rgba(255,130,0,.75),transparent 58%);filter:blur(52px);pointer-events:none;"></div>
+          <img src="Device4 Background Removed.png" alt="App screen" style="width:100%;position:relative;filter:drop-shadow(0 22px 46px rgba(255,149,0,.45)) drop-shadow(0 4px 14px rgba(0,0,0,.30));">
+        </div>
+
+        <!-- Device 2 wrapper (center hero — largest) -->
+        <div id="jd2wrap" style="position:absolute;left:54%;bottom:2%;width:31%;z-index:4;will-change:transform;">
+          <div style="position:absolute;top:-25%;left:-28%;right:-28%;bottom:-30%;background:radial-gradient(ellipse at 50% 62%,rgba(255,145,0,.85),transparent 56%);filter:blur(64px);pointer-events:none;"></div>
+          <img src="Device2 Background Removed.png" alt="Verse of the Day" style="width:100%;position:relative;filter:drop-shadow(0 32px 68px rgba(255,149,0,.52)) drop-shadow(0 8px 22px rgba(0,0,0,.35));">
+        </div>
+
+        <!-- Device 3 wrapper (right, partially cropped) -->
+        <div id="jd3wrap" style="position:absolute;right:0%;bottom:8%;width:25%;z-index:3;will-change:transform;">
+          <div style="position:absolute;top:-30%;left:-35%;right:-35%;bottom:-40%;background:radial-gradient(ellipse at 50% 56%,rgba(255,160,20,.72),transparent 58%);filter:blur(52px);pointer-events:none;"></div>
+          <img src="Device3 Background Removed.png" alt="Journal" style="width:100%;position:relative;filter:drop-shadow(0 22px 46px rgba(244,208,63,.42)) drop-shadow(0 4px 14px rgba(0,0,0,.28));mask-image:linear-gradient(to left,black 60%,transparent 100%);-webkit-mask-image:linear-gradient(to left,black 60%,transparent 100%);">
+        </div>
+
+      </div>
 
       <!-- Left-to-right gradient so text is readable -->
       <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 38%,rgba(0,0,0,.10) 65%,transparent 100%);"></div>
@@ -1590,7 +1610,7 @@
       <div style="position:absolute;inset:0;z-index:2;display:flex;align-items:center;padding:80px 80px 40px;">
         <div style="max-width:440px;">
           <h2 class="text-4xl md:text-5xl font-black text-white leading-[1.06] mb-4">Your journey,<br>one verse <span class="wisdom-gradient">at a time.</span></h2>
-          <p class="text-white/60 text-sm leading-relaxed mb-7">From the moment you open the app to your daily moment of stillness — Gita Streak walks with you every step.</p>
+          <p class="text-white/60 text-sm leading-relaxed mb-7">From the moment you open the app to your daily moment of stillness, Gita Streak walks with you every step.</p>
 
           <div class="flex flex-col gap-5">
             <div class="flex gap-3 items-start">
@@ -1661,11 +1681,10 @@
         <!-- LEFT 50%: FAQ -->
         <div id="faq" style="scroll-margin-top:20px;">
           <h2 class="text-3xl md:text-4xl font-black text-white leading-none mb-2">Questions?</h2>
-          <p class="text-white/45 text-sm font-medium mb-8">Hover to expand</p>
           <div class="flex flex-col gap-2">
 
             <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
+              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
                 <span>Is it free?</span>
                 <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </button>
@@ -1673,7 +1692,7 @@
             </div>
 
             <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
+              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
                 <span>Do I need to know Sanskrit?</span>
                 <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </button>
@@ -1681,26 +1700,26 @@
             </div>
 
             <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
+              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
                 <span>iOS or Android?</span>
                 <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </button>
-              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Both. Built with React Native — works beautifully on iPhone and Android.</div></div>
+              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">Both. Built with React Native. Works beautifully on iPhone and Android.</div></div>
             </div>
 
             <div class="faq-item overflow-hidden" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;backdrop-filter:blur(12px);cursor:pointer;transition:background .2s ease,border-color .2s ease;">
-              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-sm text-white">
+              <button class="faq-question w-full px-5 py-4 flex justify-between items-center gap-4 font-black text-xl text-white">
                 <span>How long to finish all 120 lessons?</span>
                 <svg class="faq-chevron flex-shrink-0 transition-transform duration-300" style="width:16px;height:16px;color:rgba(255,255,255,.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </button>
-              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">At one lesson a day, about 4 months. The Gita rewards patience — there's no rush.</div></div>
+              <div class="faq-answer px-5"><div class="pb-4 pt-2 text-sm leading-relaxed" style="color:#ffffff;opacity:0.75;border-top:1px solid rgba(255,255,255,.18);">At one lesson a day, about 4 months. The Gita rewards patience. There is no rush.</div></div>
             </div>
 
           </div>
         </div>
 
         <!-- RIGHT 50%: Download CTA -->
-        <div class="flex flex-col justify-center" style="margin-top:100px;">
+        <div class="flex flex-col justify-center">
           <h2 class="text-4xl md:text-5xl font-black text-white leading-[1.05] mb-8">Download the app<br>for your daily<br>Sadhana.</h2>
           <div class="flex items-center gap-3">
             <a href="https://apps.apple.com/us/iphone/search?term=gita%20streak" target="_blank" rel="noopener"
@@ -1730,8 +1749,8 @@
   <!-- ═══════════════════════════════════════════ -->
   <section id="maker" style="background:#070712;padding:130px 0 120px;position:relative;overflow:hidden;">
 
-    <!-- Moving 3D glow canvas -->
-    <canvas id="makerGlowCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+    <!-- Cursor-reactive orange glow -->
+    <div id="makerCursorGlow" style="position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(520px circle at 50% 50%,rgba(255,149,0,.20) 0%,rgba(255,100,0,.09) 42%,transparent 66%);transition:background .07s ease;"></div>
 
     <!-- Subtle dot grid -->
     <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:1;"></div>
@@ -1771,10 +1790,10 @@
 
         <!-- ── Story column ── -->
         <div>
-          <h2 style="color:#fff;font-size:clamp(2rem,4vw,2.75rem);font-weight:900;line-height:1.08;letter-spacing:-.02em;margin-bottom:28px;">Hi, I'm Jeyanth.</h2>
-          <p style="color:rgba(255,255,255,.5);font-size:15.5px;line-height:1.85;margin-bottom:20px;">I grew up with the Gita on the bookshelf — admired but never really read. When I finally sat down with it as an adult, it changed how I think about work, stress, and who I'm trying to become.</p>
-          <p style="color:rgba(255,255,255,.5);font-size:15.5px;line-height:1.85;margin-bottom:20px;">I wanted to build something that could do the same for anyone, anywhere. Completely free, no distractions — just the teaching.</p>
-          <p style="color:rgba(255,255,255,.5);font-size:15.5px;line-height:1.85;">The wisdom of the Bhagavad Gita deserves to be in everyone's hands. Not locked behind paywalls, not buried under ads, not watered down.</p>
+          <h2 style="color:#fff;font-size:clamp(2.6rem,5vw,3.6rem);font-weight:900;line-height:1.08;letter-spacing:-.02em;margin-bottom:28px;">Hi, I'm Jeyanth.</h2>
+          <p style="color:rgba(255,255,255,.5);font-size:18px;line-height:1.85;margin-bottom:20px;">I grew up with the Gita on the bookshelf, admired but never really read. When I finally sat down with it as an adult, it changed how I think about work, stress, and who I'm trying to become.</p>
+          <p style="color:rgba(255,255,255,.5);font-size:18px;line-height:1.85;margin-bottom:20px;">I wanted to build something that could do the same for anyone, anywhere. Completely free, no distractions. Just the teaching.</p>
+          <p style="color:rgba(255,255,255,.5);font-size:18px;line-height:1.85;">The wisdom of the Bhagavad Gita deserves to be in everyone's hands. Not locked behind paywalls, not buried under ads, not watered down.</p>
 
           <!-- Divider + stat row -->
           <div style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.07);display:flex;gap:32px;">
@@ -1805,6 +1824,7 @@
   <!-- FOOTER                                 -->
   <!-- ══════════════════════════════════════ -->
   <section id="marquee-section" style="background:#070712;padding:44px 0;position:relative;overflow:hidden;">
+    <div id="marqueeGlow" style="position:absolute;inset:0;z-index:1;pointer-events:none;transition:background .08s ease;background:transparent;"></div>
     <div class="marquee" style="position:relative;z-index:2;">
       <div class="marquee-track">
         <span class="marquee-item">You have a right to action <span class="ref">2:47</span></span>
@@ -1827,7 +1847,7 @@
     </div>
   </section>
 
-  <footer id="siteFooter" style="background:#0d0d1a;padding:72px 0 36px;position:relative;overflow:hidden;">
+  <footer id="siteFooter" style="background:#070712;padding:72px 0 36px;position:relative;overflow:hidden;">
     <!-- Ambient glow -->
     <div style="position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:200px;background:radial-gradient(ellipse,rgba(255,149,0,.08),transparent 70%);pointer-events:none;"></div>
     <!-- Cursor-reactive glow -->
@@ -1844,7 +1864,7 @@
             <img loading="lazy" src="apple-touch-icon.png" alt="Gita Streak" style="width:42px;height:42px;object-fit:cover;object-position:center;border-radius:11px;">
             <span class="text-white font-black text-lg tracking-tight">Gita Streak</span>
           </a>
-          <p style="color:rgba(255,255,255,.38);font-size:13px;line-height:1.7;">Ancient wisdom. Modern habits.<br>One verse at a time — free, forever.</p>
+          <p style="color:rgba(255,255,255,.38);font-size:13px;line-height:1.7;">Ancient wisdom. Modern habits.<br>One verse at a time. Free, forever.</p>
           <!-- Mini store badges -->
           <div class="flex items-center gap-3 mt-6">
             <a href="https://apps.apple.com/us/iphone/search?term=gita%20streak" target="_blank" rel="noopener"
@@ -2125,6 +2145,26 @@
       });
     })();
 
+    /* ── Marquee cursor glow ────────────────────────── */
+    (function () {
+      const section = document.getElementById('marquee-section');
+      const glow = document.getElementById('marqueeGlow');
+      if (!section || !glow) return;
+      let raf = 0;
+      section.addEventListener('mousemove', e => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const r = section.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+          const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+          glow.style.background = `radial-gradient(380px circle at ${x}% ${y}%,rgba(255,149,0,.22) 0%,rgba(255,160,60,.10) 45%,transparent 70%)`;
+        });
+      });
+      section.addEventListener('mouseleave', () => {
+        glow.style.background = 'transparent';
+      });
+    })();
+
     /* ── Footer cursor glow ─────────────────────────── */
     (function () {
       const footer = document.getElementById('siteFooter');
@@ -2281,66 +2321,59 @@
     })();
 
     /* ════════════════════════════════════════════════════
-       JOURNEY FRAME SCRUB — 240 frames, scroll-driven
+       JOURNEY DEVICE FLY-IN — scroll-driven
+       Devices launch from off-screen and land in hero-matched
+       final positions as the user scrolls through the stage.
     ════════════════════════════════════════════════════ */
     (function () {
-      const TOTAL = 240;
-      const canvas = document.getElementById('journeyCanvas');
       const stage = document.getElementById('journeyScrollStage');
-      if (!canvas || !stage) return;
+      const jd4w  = document.getElementById('jd4wrap');
+      const jd2w  = document.getElementById('jd2wrap');
+      const jd3w  = document.getElementById('jd3wrap');
+      if (!stage || !jd4w || !jd2w || !jd3w) return;
 
-      const ctx = canvas.getContext('2d');
-      let lastIdx = 0;
+      /* Set initial off-screen positions immediately so first paint shows
+         them hidden, not in their final spots. */
+      jd4w.style.transform = 'translateX(-130vw) translateY(40vh) rotate(-34deg) scale(0.45)';
+      jd2w.style.transform = 'translateY(120vh) scale(0.32)';
+      jd3w.style.transform = 'translateX(130vw) translateY(30vh) rotate(28deg) scale(0.4)';
+
+      /* Ease-out cubic — decelerates sharply into the landing position */
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
       let rafPending = false;
 
-      const imgs = Array.from({ length: TOTAL }, (_, i) => {
-        const img = new Image();
-        img.src = `video/ezgif-frame-${String(i + 1).padStart(3, '0')}.jpg`;
-        img.onload = () => { if (i === lastIdx) render(i); };
-        return img;
-      });
+      function update() {
+        const stageTop  = stage.getBoundingClientRect().top + window.scrollY;
+        const vh        = window.innerHeight;
+        const maxScroll = stage.offsetHeight - vh;
 
-      function resize() {
-        canvas.width = canvas.offsetWidth * (window.devicePixelRatio || 1);
-        canvas.height = canvas.offsetHeight * (window.devicePixelRatio || 1);
-        ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
-        render(lastIdx);
+        /* Fly-in: starts as section enters bottom of viewport */
+        const animStart = stageTop - vh;
+        const animEnd   = stageTop + vh * 0.15;
+        const raw = Math.max(0, Math.min(1, (window.scrollY - animStart) / (animEnd - animStart)));
+        const t   = easeOutCubic(raw);
+        const inv = 1 - t;
+
+        /* Exit parallax: slow drift once sticky phase ends and section scrolls out */
+        const exitDelta = Math.max(0, window.scrollY - (stageTop + maxScroll));
+        const ef  = 0.16;
+        const ex4 = -(exitDelta * ef * 0.5);
+        const ey  = -(exitDelta * ef);
+        const ex3 =  (exitDelta * ef * 0.5);
+
+        jd4w.style.transform = `translateX(calc(${inv * -130}vw + ${ex4.toFixed(1)}px)) translateY(calc(${inv * 40}vh + ${ey.toFixed(1)}px)) rotate(${(inv * -34).toFixed(2)}deg) scale(${(0.45 + t * 0.55).toFixed(3)})`;
+        jd2w.style.transform = `translateY(calc(${inv * 120}vh + ${(ey * 0.7).toFixed(1)}px)) scale(${(0.32 + t * 0.68).toFixed(3)})`;
+        jd3w.style.transform = `translateX(calc(${inv * 130}vw + ${ex3.toFixed(1)}px)) translateY(calc(${inv * 30}vh + ${ey.toFixed(1)}px)) rotate(${(inv * 28).toFixed(2)}deg) scale(${(0.4 + t * 0.6).toFixed(3)})`;
       }
-
-      function render(idx) {
-        const img = imgs[idx];
-        if (!img || !img.complete || !img.naturalWidth) {
-          for (let d = 1; d < TOTAL; d++) {
-            const lo = idx - d, hi = idx + d;
-            if (lo >= 0 && imgs[lo].complete && imgs[lo].naturalWidth) { render(lo); return; }
-            if (hi < TOTAL && imgs[hi].complete && imgs[hi].naturalWidth) { render(hi); return; }
-          }
-          return;
-        }
-        const cw = canvas.offsetWidth, ch = canvas.offsetHeight;
-        const iw = img.naturalWidth, ih = img.naturalHeight;
-        const scale = Math.max(cw / iw, ch / ih);
-        const dx = (cw - iw * scale) / 2, dy = (ch - ih * scale) / 2;
-        ctx.clearRect(0, 0, cw, ch);
-        ctx.drawImage(img, dx, dy, iw * scale, ih * scale);
-      }
-
-      if (imgs[0].complete) { resize(); }
-      else { imgs[0].onload = () => resize(); }
-      window.addEventListener('resize', () => resize(), { passive: true });
 
       window.addEventListener('scroll', () => {
         if (rafPending) return;
         rafPending = true;
-        requestAnimationFrame(() => {
-          rafPending = false;
-          const stageTop = stage.getBoundingClientRect().top + window.scrollY;
-          const maxScroll = stage.offsetHeight - window.innerHeight;
-          const t = Math.max(0, Math.min(1, (window.scrollY - stageTop) / maxScroll));
-          const idx = Math.round(t * (TOTAL - 1));
-          if (idx !== lastIdx) { lastIdx = idx; render(idx); }
-        });
+        requestAnimationFrame(() => { rafPending = false; update(); });
       }, { passive: true });
+
+      update();
     })();
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -2582,8 +2615,8 @@
       }, { threshold: 0.07 });
       document.querySelectorAll('.card-reveal').forEach(el => cardObs.observe(el));
 
-      /* ── 3D push-in tilt on practice glass cards ── */
-      document.querySelectorAll('#practice .glass-card').forEach(card => {
+      /* ── 3D push-in tilt on practice glass cards + features bento cards ── */
+      document.querySelectorAll('#practice .glass-card, #features .card-reveal').forEach(card => {
         let raf = 0;
         card.style.willChange = 'transform';
         card.addEventListener('mousemove', e => {
@@ -2681,95 +2714,25 @@
 
     });
 
-    /* ════════════════════════════════════════════════
-       MAKER SECTION — 3D volumetric glow canvas
-       Three light sources drift on overlapping Lissajous
-       paths so the motion looks organic and never repeats.
-    ════════════════════════════════════════════════ */
+
+    /* ── Maker section cursor-reactive orange glow ──────── */
     (function () {
-      const canvas = document.getElementById('makerGlowCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-
-      function resize() {
-        const r = canvas.parentElement.getBoundingClientRect();
-        canvas.width  = r.width  * devicePixelRatio;
-        canvas.height = r.height * devicePixelRatio;
-        ctx.scale(devicePixelRatio, devicePixelRatio);
-      }
-      resize();
-      window.addEventListener('resize', () => { ctx.resetTransform(); resize(); });
-
-      /* Each orb drifts using two independent sine waves per axis —
-         different irrational-ratio frequencies ensure it never quite repeats */
-      const orbs = [
-        {
-          /* large warm-orange core */
-          r: 420, alpha: 0.18,
-          cx: 0.45, cy: 0.5,          // normalised centre
-          ax: 0.28, ay: 0.22,          // amplitude (fraction of w/h)
-          fx1: 0.00017, fy1: 0.00013, // primary sine freq (rad/ms)
-          fx2: 0.000073, fy2: 0.000091,
-          px1: 0, py1: 1.1, px2: 2.4, py2: 0.7,
-          color: [255, 120, 0],
-        },
-        {
-          /* mid amber, offset phase */
-          r: 300, alpha: 0.13,
-          cx: 0.55, cy: 0.45,
-          ax: 0.32, ay: 0.28,
-          fx1: 0.000131, fy1: 0.000097,
-          fx2: 0.000061, fy2: 0.000083,
-          px1: 1.6, py1: 0.3, px2: 3.1, py2: 1.9,
-          color: [255, 170, 20],
-        },
-        {
-          /* small deep-red accent */
-          r: 220, alpha: 0.11,
-          cx: 0.5, cy: 0.55,
-          ax: 0.38, ay: 0.32,
-          fx1: 0.000109, fy1: 0.000141,
-          fx2: 0.000079, fy2: 0.000057,
-          px1: 0.8, py1: 2.2, px2: 1.4, py2: 3.5,
-          color: [220, 80, 0],
-        },
-      ];
-
-      function drawOrb(orb, W, H, t) {
-        const x = W * orb.cx
-          + W * orb.ax * Math.sin(orb.fx1 * t + orb.px1)
-          + W * orb.ax * 0.4 * Math.sin(orb.fx2 * t + orb.px2);
-        const y = H * orb.cy
-          + H * orb.ay * Math.sin(orb.fy1 * t + orb.py1)
-          + H * orb.ay * 0.4 * Math.sin(orb.fy2 * t + orb.py2);
-
-        /* subtle size breathe */
-        const scale = 1 + 0.12 * Math.sin(0.000053 * t + orb.px1);
-        const r = orb.r * scale;
-
-        const g = ctx.createRadialGradient(x, y, 0, x, y, r);
-        const [R, G, B] = orb.color;
-        g.addColorStop(0,   `rgba(${R},${G},${B},${orb.alpha})`);
-        g.addColorStop(0.35,`rgba(${R},${G},${B},${orb.alpha * 0.55})`);
-        g.addColorStop(0.7, `rgba(${R},${G},${B},${orb.alpha * 0.18})`);
-        g.addColorStop(1,   `rgba(${R},${G},${B},0)`);
-
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.ellipse(x, y, r, r * 0.72, 0, 0, Math.PI * 2); // slightly squashed = more 3-D
-        ctx.fill();
-      }
-
-      function tick(t) {
-        const W = canvas.width  / devicePixelRatio;
-        const H = canvas.height / devicePixelRatio;
-        ctx.clearRect(0, 0, W, H);
-        ctx.globalCompositeOperation = 'screen';
-        for (const orb of orbs) drawOrb(orb, W, H, t);
-        ctx.globalCompositeOperation = 'source-over';
-        requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
+      const maker = document.getElementById('maker');
+      const glow = document.getElementById('makerCursorGlow');
+      if (!maker || !glow) return;
+      let raf = 0;
+      maker.addEventListener('mousemove', e => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const r = maker.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+          const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+          glow.style.background = `radial-gradient(480px circle at ${x}% ${y}%,rgba(255,149,0,.40) 0%,rgba(255,100,0,.18) 36%,rgba(255,60,0,.05) 58%,transparent 72%)`;
+        });
+      });
+      maker.addEventListener('mouseleave', () => {
+        glow.style.background = 'radial-gradient(520px circle at 50% 50%,rgba(255,149,0,.20) 0%,rgba(255,100,0,.09) 42%,transparent 66%)';
+      });
     })();
   </script>
 
