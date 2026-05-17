@@ -1294,26 +1294,11 @@
         display: none !important;
       }
 
-      #heroMobileDevice {
-        display: block !important;
-        width: 78vw !important;
-      }
-
-      #heroMobileGlow {
-        display: block !important;
-        width: 96vw !important;
-        height: 96vw !important;
-      }
-
-      #heroMobileLeft {
-        display: block !important;
-        width: 52vw !important;
-      }
-
-      #heroMobileRight {
-        display: block !important;
-        width: 62vw !important;
-      }
+      /* Sizes/positions set entirely by JS — only display override needed here */
+      #heroMobileDevice { display: block !important; }
+      #heroMobileGlow   { display: block !important; }
+      #heroMobileLeft   { display: block !important; }
+      #heroMobileRight  { display: block !important; }
 
       /* ── PRACTICE ── */
       #practice {
@@ -1449,10 +1434,6 @@
       #heroText .flex.items-center.gap-3 {
         margin-bottom: 12px !important;
       }
-      #heroMobileDevice { width: 72vw !important; }
-      #heroMobileGlow   { width: 90vw !important; height: 90vw !important; }
-      #heroMobileLeft   { width: 48vw !important; bottom: 44px !important; }
-      #heroMobileRight  { width: 56vw !important; bottom: 28px !important; }
     }
   </style>
 </head>
@@ -1604,23 +1585,23 @@
 
     <!-- Mobile-only: three devices + glow (hidden on desktop) -->
     <div id="heroMobileGlow"
-      style="display:none;position:absolute;bottom:80px;left:50%;transform:translateX(-50%);width:420px;height:420px;background:radial-gradient(circle,rgba(255,149,0,.38),transparent 62%);filter:blur(80px);pointer-events:none;z-index:6;">
+      style="display:none;position:absolute;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,149,0,.38),transparent 62%);filter:blur(80px);pointer-events:none;z-index:6;">
     </div>
     <!-- Left side device -->
     <div id="heroMobileLeft"
-      style="display:none;position:absolute;left:-30px;bottom:70px;width:260px;z-index:10;will-change:transform;">
+      style="display:none;position:absolute;left:-15px;z-index:10;will-change:transform;">
       <img src="Device4 Background Removed.png" alt=""
         style="width:100%;filter:drop-shadow(0 -12px 32px rgba(255,149,0,.30));mask-image:linear-gradient(to right,transparent 0%,black 35%,black 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 35%,black 100%);">
     </div>
     <!-- Center main device -->
     <div id="heroMobileDevice"
-      style="display:none;position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:360px;z-index:15;will-change:transform;">
+      style="display:none;position:absolute;bottom:0;left:50%;transform:translateX(-50%);z-index:15;will-change:transform;">
       <img src="Device2 Background Removed.png" alt="Gita Streak app"
         style="width:100%;filter:drop-shadow(0 -16px 48px rgba(255,149,0,.45)) drop-shadow(0 8px 20px rgba(0,0,0,.10));">
     </div>
     <!-- Right side device -->
     <div id="heroMobileRight"
-      style="display:none;position:absolute;right:-51px;bottom:48px;width:295px;z-index:10;will-change:transform;">
+      style="display:none;position:absolute;right:-30px;z-index:10;will-change:transform;">
       <img src="Device3 Background Removed.png" alt=""
         style="width:100%;filter:drop-shadow(0 -12px 32px rgba(255,149,0,.30));mask-image:linear-gradient(to left,transparent 0%,black 35%,black 100%);-webkit-mask-image:linear-gradient(to left,transparent 0%,black 35%,black 100%);">
     </div>
@@ -2958,6 +2939,55 @@
       }, { passive: true });
 
       update();
+    })();
+
+    /* ── Mobile hero: derive device sizes from actual text height ──
+       Reads heroText.getBoundingClientRect().bottom so devices always
+       fill the space below the copy without ever overlapping it.
+       Works identically across SE, regular, Pro Max — no !important needed. ── */
+    (function () {
+      function sizeHeroDevices() {
+        if (window.innerWidth >= 768) return;
+
+        const vw     = window.innerWidth;
+        const vh     = window.innerHeight;
+        const text   = document.getElementById('heroText');
+        const center = document.getElementById('heroMobileDevice');
+        const left   = document.getElementById('heroMobileLeft');
+        const right  = document.getElementById('heroMobileRight');
+        const glow   = document.getElementById('heroMobileGlow');
+        if (!text || !center || !left || !right) return;
+
+        /* Widths proportional to screen width, calibrated so that at 375 px:
+           center = 260 px, left = 190 px, right = 220 px.
+           Scales naturally to larger phones (Pro Max etc.). */
+        const cW = Math.round(vw * 0.693);
+        const lW = Math.round(vw * 0.507);
+        const rW = Math.round(vw * 0.587);
+
+        center.style.width = cW + 'px';
+
+        /* Left — lifted 8 % of viewport height */
+        const lBtm = Math.round(vh * 0.08);
+        left.style.width  = lW   + 'px';
+        left.style.bottom = lBtm + 'px';
+
+        /* Right — lifted 5 % of viewport height */
+        const rBtm = Math.round(vh * 0.05);
+        right.style.width  = rW   + 'px';
+        right.style.bottom = rBtm + 'px';
+
+        /* Glow — scales with center */
+        if (glow) {
+          const gs = Math.round(cW * 1.35);
+          glow.style.width  = gs + 'px';
+          glow.style.height = gs + 'px';
+          glow.style.bottom = Math.round(cW * 0.5) + 'px';
+        }
+      }
+
+      sizeHeroDevices();                                      /* run immediately */
+      window.addEventListener('load', sizeHeroDevices);      /* re-run after fonts settle */
     })();
 
     /* ── Mobile hero: side-device + free-bar fly-in, scroll drift ── */
