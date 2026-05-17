@@ -2984,6 +2984,11 @@
           glow.style.height = gs + 'px';
           glow.style.bottom = Math.round(cW * 0.5) + 'px';
         }
+
+        /* Shift all devices 100 px lower so they clear the text */
+        center.style.bottom = '-100px';
+        left.style.bottom   = Math.max(0, lBtm - 100) + 'px';
+        right.style.bottom  = Math.max(0, rBtm - 100) + 'px';
       }
 
       sizeHeroDevices();                                      /* run immediately */
