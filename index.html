@@ -2986,7 +2986,7 @@
         }
 
         /* Shift center 100 px down via transform (bottom stays 0, Y offset is reliable) */
-        center.style.transform = 'translateX(-50%) translateY(100px)';
+        center.style.transform = 'translateX(-50%) translateY(50px)';
       }
 
       sizeHeroDevices();                                      /* run immediately */
@@ -3009,8 +3009,8 @@
       const snap = (el, t) => { el.style.transition = 'none'; el.style.transform = t; };
 
       /* Start: side devices off-screen, free bar text shifted inward */
-      snap(left,  'translateX(-240px) translateY(100px)');
-      snap(right, 'translateX(240px) translateY(100px)');
+      snap(left,  'translateX(-240px) translateY(50px)');
+      snap(right, 'translateX(240px) translateY(50px)');
       if (free)  { free.style.transition  = 'none'; free.style.transform  = 'translateX(-56px)'; }
       if (noAds) { noAds.style.transition = 'none'; noAds.style.transform = 'translateX(56px)';  }
       if (glow)  { glow.style.transition  = 'none'; glow.style.opacity    = '0'; }
@@ -3025,8 +3025,8 @@
           if (noAds) noAds.style.transition = `transform 1.5s ${ease} 0.55s`;
           if (glow)  glow.style.transition  = 'opacity 1.4s ease 0.5s';
 
-          left.style.transform  = 'translateX(0) translateY(100px)';
-          right.style.transform = 'translateX(0) translateY(100px)';
+          left.style.transform  = 'translateX(0) translateY(50px)';
+          right.style.transform = 'translateX(0) translateY(50px)';
           if (free)  free.style.transform  = 'translateX(0)';
           if (noAds) noAds.style.transform = 'translateX(0)';
           if (glow)  glow.style.opacity = '1';
@@ -3056,8 +3056,8 @@
 
           /* Side devices: slow drift out over 2 viewports */
           const pd = Math.min(1, sy / (vh * 2));
-          left.style.transform  = `translateX(${pd * -110}px) translateY(100px)`;
-          right.style.transform = `translateX(${pd * 110}px) translateY(100px)`;
+          left.style.transform  = `translateX(${pd * -110}px) translateY(50px)`;
+          right.style.transform = `translateX(${pd * 110}px) translateY(50px)`;
 
           /* Free bar: slower drift back to their sides */
           const pt = Math.min(1, sy / (vh * 1.8));
